@@ -41,7 +41,7 @@
       </div>
       <div class="builder-section" id="builder">
         <div class="input-card">
-          <form id="promptForm" method="post" autocomplete="off">
+          <form id="promptForm" autocomplete="off" onsubmit="event.preventDefault(); var val=document.getElementById('modalPrompt').value; if(val){window.location.href='/editor?prompt='+encodeURIComponent(val);} return false;">
             <div class="input-row">
               <input
                 type="text"
@@ -288,7 +288,7 @@
                 features.
               </div>
               <a
-                href="#builder"
+                href="/editor"
                 class="cta-btn"
                 class="cta-btn cta-btn-fit"
                 >Start building</a
@@ -386,7 +386,7 @@
                 <li class="pricing-list-item">✔ Authentication system</li>
                 <li class="pricing-list-item">✔ Database functionality</li>
               </ul>
-              <a href="#builder" class="cta-btn cta-btn-full" style="margin-top: 10px;">Start building</a>
+              <a href="/editor" class="cta-btn cta-btn-full" style="margin-top: 10px;">Start building</a>
             </div>
             <div class="pricing-card-animate" style="background: #fff; border-radius: 36px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 40px 24px; color: #23263a; max-width: 420px; min-width: 320px; text-align: center; border: 10px solid #1a237e; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s, transform 0.3s;">
               <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Pro Plan</h3>
@@ -475,7 +475,7 @@
             <li class="pricing-list-item">Authentication system</li>
             <li class="pricing-list-item">Database functionality</li>
           </ul>
-          <a href="#builder" class="cta-btn cta-btn-full"
+          <a href="/editor" class="cta-btn cta-btn-full"
             >Start building</a
           >
         </div>

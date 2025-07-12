@@ -133,6 +133,10 @@ async def generate_app_json(data: dict = Body(...)):
     output = data["choices"][0]["message"]["content"] if "choices" in data and data["choices"] else ""
     return JSONResponse({"output": output})
 
+@app.get("/editor", response_class=HTMLResponse)
+async def editor(request: Request):
+    return templates.TemplateResponse("editor.html", {"request": request})
+
 @app.post("/build")
 async def build_app(data: dict = Body(...)):
     try:
