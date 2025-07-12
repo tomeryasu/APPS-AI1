@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>YASO AI – Build AI Apps Instantly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-left">
+        <a href="/" class="logo"><span class="logo-icon"></span>Yaso AI</a>
+      </div>
+      <div class="nav-links">
+        {% if user_name %}
+        <span class="user-name">{{ user_name }}</span>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/logout" class="nav-link">Logout</a>
+        {% else %}
+        <a href="#" class="nav-link">Pricing</a>
+        <a href="#" class="nav-link">Enterprise</a>
+        <a href="/login" class="nav-btn nav-btn-margin">Login</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="main-content-fit">
+      <div class="main-hero">
+        <div class="main-title">
+          Build AI apps <span class="highlight">instantly.</span> No code. No
+          limits.
+        </div>
+        <div class="main-sub">
+          Yaso AI lets you create production-ready AI apps in seconds. Just
+          describe your idea and launch. No coding, no waiting, no limits.
+        </div>
+        <div class="cta-row"></div>
+      </div>
+      <div class="builder-section" id="builder">
+        <div class="input-card">
+          <form id="promptForm" method="post" autocomplete="off">
+            <div class="input-row">
+              <input
+                type="text"
+                name="prompt"
+                id="modalPrompt"
+                placeholder="What do you want to build?"
+              />
+              <button type="submit" class="send-btn">
+                <span class="arrow-up">&#8593;</span>
+              </button>
+            </div>
+          </form>
+          <div class="suggestion-label">
+            Not sure where to start? Try one of these:
+          </div>
+          <div class="suggestions">
+            <div class="suggestion-pill">Reporting Dashboard</div>
+            <div class="suggestion-pill">Gaming Platform</div>
+            <div class="suggestion-pill">Onboarding Portal</div>
+            <div class="suggestion-pill">Networking App</div>
+            <div class="suggestion-pill">Room Visualizer</div>
+          </div>
+        </div>
+        {% if output %}
+        <div class="output-container">
+          <pre id="output">{{ output }}</pre>
+        </div>
+        {% endif %}
+      </div>
+      <div class="trusted-row">
+        <div class="avatars avatars-gap0">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            class="avatar"
+            alt="avatar1"
+          />
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            class="avatar"
+            alt="avatar2"
+          />
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            class="avatar"
+            alt="avatar3"
+          />
+        </div>
+        <div class="trusted-text">Trusted by 300K+ users</div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white">
+      <div>
+        <h2 class="section-title-lg">“Okay, @yaso_ai has blown my mind.”</h2>
+        <div class="section-desc-lg">
+          And other great things our users say about us.
+        </div>
+        <a href="#builder" class="cta-btn cta-btn-mb">Start building</a>
+        <div class="testimonial-marquee-container">
+          <div class="testimonial-marquee-row1">
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Best of Philosophy" />
+              <div class="testimonial-quote">YASO AI looks perfect for founders who want to build fast without...</div>
+              <div class="testimonial-author">Best of Philosophy <span class="testimonial-handle">@BotPhilosophyQ</span></div>
+              <div class="testimonial-socials">
+                <!-- X (Twitter) -->
+                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/11.jpg" alt="Hasan Toor" />
+              <div class="testimonial-quote">You can now build a full AI app without writing any code. YASO AI to...</div>
+              <div class="testimonial-author">Hasan Toor <span class="testimonial-handle">@hasantoxr</span></div>
+              <div class="testimonial-socials">
+                <!-- GitHub -->
+                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg3">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Maria Martin" />
+              <div class="testimonial-quote">Okay, YASO AI has blown my mind 🤯. No iterations, no changes,...</div>
+              <div class="testimonial-author">Maria Martin <span class="testimonial-handle">@marias_martin</span></div>
+              <div class="testimonial-socials">
+                <!-- LinkedIn -->
+                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/13.jpg" alt="Gleb Konon" />
+              <div class="testimonial-quote">Just built this awesome web app using @yaso_ai! I'm blown awa...</div>
+              <div class="testimonial-author">Gleb Konon</div>
+              <div class="testimonial-socials">
+                <!-- Facebook -->
+                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/14.jpg" alt="Richard Manisa" />
+              <div class="testimonial-quote">What makes YASO AI different is that the interaction with the AI is...</div>
+              <div class="testimonial-author">Richard Manisa</div>
+              <div class="testimonial-socials">
+                <!-- X (Twitter) -->
+                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg3">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/15.jpg" alt="Masiar Ighani" />
+              <div class="testimonial-quote">One of the best AI Coders out there. I tried many of them. What...</div>
+              <div class="testimonial-author">Masiar Ighani</div>
+              <div class="testimonial-socials">
+                <!-- GitHub -->
+                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+              </div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Best of Philosophy" />
+              <div class="testimonial-quote">Base44 looks perfect for founders who want to build fast without...</div>
+              <div class="testimonial-author">Best of Philosophy <span class="testimonial-handle">@BotPhilosophyQ</span></div>
+              <div class="testimonial-socials">
+                <!-- LinkedIn -->
+                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/11.jpg" alt="Hasan Toor" />
+              <div class="testimonial-quote">You can now build a full AI app without writing any code. This to...</div>
+              <div class="testimonial-author">Hasan Toor <span class="testimonial-handle">@hasantoxr</span></div>
+              <div class="testimonial-socials">
+                <!-- Facebook -->
+                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg3">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Maria Martin" />
+              <div class="testimonial-quote">Okay, Base44 has blown my mind 🤯. No iterations, no changes,...</div>
+              <div class="testimonial-author">Maria Martin <span class="testimonial-handle">@marias_martin</span></div>
+              <div class="testimonial-socials">
+                <!-- X (Twitter) -->
+                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-marquee-row2">
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/16.jpg" alt="Ariel MI" />
+              <div class="testimonial-quote">Amazing understanding of the user needs and thorough handli...</div>
+              <div class="testimonial-author">Ariel MI</div>
+              <div class="testimonial-socials">
+                <!-- GitHub -->
+                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/17.jpg" alt="Thatweb3guy" />
+              <div class="testimonial-quote">@MS_YASOAI @yaso_ai I gave it a try and I must to be truthful, it...</div>
+              <div class="testimonial-author">Thatweb3guy <span class="testimonial-handle">@myfootyfantasy</span></div>
+              <div class="testimonial-socials">
+                <!-- LinkedIn -->
+                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg3">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/18.jpg" alt="Roy Kotzer" />
+              <div class="testimonial-quote">Start building in minutes. See results immediately. Great!</div>
+              <div class="testimonial-author">Roy Kotzer</div>
+              <div class="testimonial-socials">
+                <!-- Facebook -->
+                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/19.jpg" alt="Erel Cohen" />
+              <div class="testimonial-quote">Fastest Aha! moment I have ever had.</div>
+              <div class="testimonial-author">Erel Cohen</div>
+              <div class="testimonial-socials">
+                <!-- X (Twitter) -->
+                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/20.jpg" alt="Eran Cohen" />
+              <div class="testimonial-quote">YASO AI revolutionizes app development by enabling users t...</div>
+              <div class="testimonial-author">Eran Cohen</div>
+              <div class="testimonial-socials">
+                <!-- GitHub -->
+                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
+              </div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="testimonial-card bg1">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/16.jpg" alt="Ariel MI" />
+              <div class="testimonial-quote">Amazing understanding of the user needs and thorough handli...</div>
+              <div class="testimonial-author">Ariel MI</div>
+              <div class="testimonial-socials">
+                <!-- LinkedIn -->
+                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg2">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/17.jpg" alt="Thatweb3guy" />
+              <div class="testimonial-quote">@MS_BASE44 @base_44 I gave it a try and I must to be truthful, it...</div>
+              <div class="testimonial-author">Thatweb3guy <span class="testimonial-handle">@myfootyfantasy</span></div>
+              <div class="testimonial-socials">
+                <!-- Facebook -->
+                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
+              </div>
+            </div>
+            <div class="testimonial-card bg3">
+              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/18.jpg" alt="Roy Kotzer" />
+              <div class="testimonial-quote">Start building in minutes. See results immediately. Great!</div>
+              <div class="testimonial-author">Roy Kotzer</div>
+              <div class="testimonial-socials">
+                <!-- X (Twitter) -->
+                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limitless Section -->
+    <section class="bg-white fade-in">
+      <div class="container-center">
+        <h2 class="section-title-lg">
+          Consider yourself limitless.
+        </h2>
+        <div class="section-desc-lg">
+          If you can describe it, you can build it.
+        </div>
+        <div class="limitless-blocks">
+          <div
+            class="fade-in limitless-block bg1"
+          >
+            <div
+              class="limitless-text"
+            >
+              <h3>Create at the speed of thought</h3>
+              <div class="limitless-desc">
+                Tell Base44 your idea, and watch it transform into a working
+                app—complete with all the necessary components, pages, flows and
+                features.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img"
+            >
+              <img
+                src="/static/1.png"
+                alt="Create at the speed of thought"
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+          <div
+            class="fade-in limitless-block bg2 row-reverse"
+          >
+            <div
+              class="limitless-text right"
+            >
+              <h3>The backend’s built-in automatically</h3>
+              <div class="limitless-desc">
+                Everything your idea needs to function, like letting users sign
+                in, saving their data, or creating role-based permissions is
+                taken care of behind the scenes.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img left"
+            >
+              <img
+                src="/static/2.png"
+                alt="The backend’s built-in automatically"
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+          <div
+            class="fade-in limitless-block bg3"
+          >
+            <div
+              class="limitless-text"
+            >
+              <h3>Ready to use, instantly.</h3>
+              <div class="limitless-desc">
+                Our platform comes with built-in hosting, so when your app is
+                ready the only thing left to do is publish, put it to use, and
+                share it with your friends or community.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img"
+            >
+              <img
+                src="/static/3.png"
+                alt="Ready to use, instantly."
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- Pricing Section -->
+    <section class="fade-in bg-white">
+      <div style="width: 100%; padding: 0 0 80px 0;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto;">
+          <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-width: 260px;">
+            <h2 class="section-title-lg" style="text-align: left;">Pricing plans for <span class="highlight-accent">every need</span></h2>
+            <div class="section-desc-lg" style="text-align: left;">Scale as you go with plans designed to match your growth.</div>
+          </div>
+          <div style="display: flex; flex-direction: row; gap: 36px; align-items: flex-start;">
+            <div class="pricing-card-animate" style="background: #fff; border-radius: 18px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 48px 36px; color: #23263a; max-width: 340px; min-width: 220px; text-align: center; border: 1.5px solid #e0e6f7; display: flex; flex-direction: column; align-items: center;">
+              <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Start for free.</h3>
+              <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$0</div>
+              <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
+              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 18px; text-align: left;">
+                <li class="pricing-list-item">All core features</li>
+                <li class="pricing-list-item">Built-in integrations</li>
+                <li class="pricing-list-item">Authentication system</li>
+                <li class="pricing-list-item">Database functionality</li>
+              </ul>
+              <a href="#builder" class="cta-btn cta-btn-full" style="margin-top: 10px;">Start building</a>
+            </div>
+            <div class="pricing-card-animate" style="background: #fff; border-radius: 18px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 48px 36px; color: #23263a; max-width: 340px; min-width: 220px; text-align: center; border: 1.5px solid #e0e6f7; display: flex; flex-direction: column; align-items: center;">
+              <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Pro Plan</h3>
+              <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$20</div>
+              <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
+              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 18px; text-align: left;">
+                <li class="pricing-list-item">Everything in Free</li>
+                <li class="pricing-list-item">More credits</li>
+                <li class="pricing-list-item">Priority support</li>
+                <li class="pricing-list-item">Advanced integrations</li>
+              </ul>
+              <a href="#" class="cta-btn cta-btn-full" style="background: linear-gradient(90deg, #44e9ff 0%, #6e5cff 100%); margin-top: 10px;">See all plans</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why yaso Section -->  
+    </section>
+    <section class="bg-d6dfff fade-in testimonials-section">
+      <div class="container-center">
+        <h2 class="section-title">
+          Why Choose Yaso AI?
+        </h2>
+        <div class="flex-wrap-center gap36">
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              No Code Required
+            </div>
+            <div class="faq-desc">
+              Anyone can build, launch, and scale AI apps.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              Lightning Fast
+            </div>
+            <div class="faq-desc">
+              Go from idea to app in seconds, not weeks.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              Scalable & Secure
+            </div>
+            <div class="faq-desc">
+              Built for growth, with enterprise-grade security.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="fade-in bg-white">
+      <div class="container-center">
+        <h2 class="section-title-lg">
+        Pricing plans for every need
+        </h2>
+        <div class="section-desc-lg">
+        Scale as you go with plans designed to match your growth.
+        </div>
+        <div
+          style="
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f6e7ff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 38px 28px;
+          "
+        >
+          <h3 class="pricing-title">
+            Start for free.
+          </h3>
+          <ul class="pricing-list">
+            <li class="pricing-list-item">All core features</li>
+            <li class="pricing-list-item">Built-in integrations</li>
+            <li class="pricing-list-item">Authentication system</li>
+            <li class="pricing-list-item">Database functionality</li>
+          </ul>
+          <a href="#builder" class="cta-btn cta-btn-full"
+            >Start building</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-f7f8fa fade-in">
+      <div class="container-center">
+        <h2 class="section-title center">
+          Frequently Asked Questions
+        </h2>
+        <div class="flex-col gap18">
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              Is any coding required?
+            </div>
+            <div class="faq-desc">
+              No coding is needed. Just describe your idea and Yaso AI does the
+              rest.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              Can I use my app commercially?
+            </div>
+            <div class="faq-desc">
+              Yes, you can launch and monetize your AI apps built with Yaso AI.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              How fast can I launch?
+            </div>
+            <div class="faq-desc">
+              Most apps are ready in under a minute.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container-center">
+        <div class="footer-title">
+          Yaso AI
+        </div>
+        <div class="footer-desc">
+          Build AI apps instantly. No code. No limits.
+        </div>
+        <div class="footer-copy">
+          &copy; 2024 Yaso AI. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="/static/script.js"></script>
+  </body>
+</html>

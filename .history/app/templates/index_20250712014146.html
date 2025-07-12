@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Base44 – Build AI Apps Instantly</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-left">
+        <a href="/" class="logo"><span class="logo-icon"></span>Yaso AI</a>
+      </div>
+      <div class="nav-links">
+        {% if user_name %}
+        <span class="user-name">{{ user_name }}</span>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/logout" class="nav-link">Logout</a>
+        {% else %}
+        <a href="#" class="nav-link">Pricing</a>
+        <a href="#" class="nav-link">Enterprise</a>
+        <a href="/login" class="nav-btn nav-btn-margin">Login</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="main-content-fit">
+      <div class="main-hero">
+        <div class="main-title">
+          Build AI apps <span class="highlight">instantly.</span> No code. No
+          limits.
+        </div>
+        <div class="main-sub">
+          Yaso AI lets you create production-ready AI apps in seconds. Just
+          describe your idea and launch. No coding, no waiting, no limits.
+        </div>
+        <div class="cta-row"></div>
+      </div>
+      <div class="builder-section" id="builder">
+        <div class="input-card">
+          <form id="promptForm" method="post" autocomplete="off">
+            <div class="input-row">
+              <input
+                type="text"
+                name="prompt"
+                id="modalPrompt"
+                placeholder="What do you want to build?"
+              />
+              <button type="submit" class="send-btn">
+                <span class="arrow-up">&#8593;</span>
+              </button>
+            </div>
+          </form>
+          <div class="suggestion-label">
+            Not sure where to start? Try one of these:
+          </div>
+          <div class="suggestions">
+            <div class="suggestion-pill">Reporting Dashboard</div>
+            <div class="suggestion-pill">Gaming Platform</div>
+            <div class="suggestion-pill">Onboarding Portal</div>
+            <div class="suggestion-pill">Networking App</div>
+            <div class="suggestion-pill">Room Visualizer</div>
+          </div>
+        </div>
+        {% if output %}
+        <div class="output-container">
+          <pre id="output">{{ output }}</pre>
+        </div>
+        {% endif %}
+      </div>
+      <div class="trusted-row">
+        <div class="avatars avatars-gap0">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            class="avatar"
+            alt="avatar1"
+          />
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            class="avatar"
+            alt="avatar2"
+          />
+          <img
+            src="https://randomuser.me/api/portraits/women/68.jpg"
+            class="avatar"
+            alt="avatar3"
+          />
+        </div>
+        <div class="trusted-text">Trusted by 300K+ users</div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="bg-white">
+      <div class="container-center">
+        <h2 class="section-title-lg">“Okay, @base_44 has blown my mind.”</h2>
+        <div class="section-desc-lg">
+          And other great things our users say about us.
+        </div>
+        <a href="#builder" class="cta-btn cta-btn-mb">Start building</a>
+        <div class="flex-wrap-center gap24 mt32">
+          <div
+            class="testimonial-card bg1"
+          >
+            <div class="testimonial-quote">
+              Base44 looks perfect for founders who want to build fast
+              without...
+            </div>
+            <div class="testimonial-author">
+              Best of Philosophy
+              <span class="testimonial-handle"
+                >@BotPhilosophyQ</span
+              >
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg2"
+          >
+            <div class="testimonial-quote">
+              You can now build a full AI app without writing any code. This
+              to...
+            </div>
+            <div class="testimonial-author">
+              Hasan Toor
+              <span class="testimonial-handle"
+                >@hasantoxr</span
+              >
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg3"
+          >
+            <div class="testimonial-quote">
+              Okay, Base44 has blown my mind 🤯. No iterations, no changes,...
+            </div>
+            <div class="testimonial-author">
+              Maria Martin
+              <span class="testimonial-handle"
+                >@marias_martin</span
+              >
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg1"
+          >
+            <div class="testimonial-quote">
+              Just built this awesome web app using @base_44! I'm blown awa...
+            </div>
+            <div class="testimonial-author">
+              Gleb Konon
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg2"
+          >
+            <div class="testimonial-quote">
+              What makes Base44 different is that the interaction with the AI
+              is...
+            </div>
+            <div class="testimonial-author">
+              Richard Manisa
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg3"
+          >
+            <div class="testimonial-quote">
+              One of the best AI Coders out there. I tried many of them. What...
+            </div>
+            <div class="testimonial-author">
+              Masiar Ighani
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg1"
+          >
+            <div class="testimonial-quote">
+              Amazing understanding of the user needs and thorough handli...
+            </div>
+            <div class="testimonial-author">
+              Ariel MI
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg2"
+          >
+            <div class="testimonial-quote">
+              @MS_BASE44 @base_44 I gave it a try and I must to be truthful,
+              it...
+            </div>
+            <div class="testimonial-author">
+              Thatweb3guy
+              <span class="testimonial-handle"
+                >@myfootyfantasy</span
+              >
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg3"
+          >
+            <div class="testimonial-quote">
+              Start building in minutes. See results immediately. Great!
+            </div>
+            <div class="testimonial-author">
+              Roy Kotzer
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg1"
+          >
+            <div class="testimonial-quote">
+              Fastest Aha! moment I have ever had.
+            </div>
+            <div class="testimonial-author">
+              Erel Cohen
+            </div>
+          </div>
+          <div
+            class="testimonial-card bg2"
+          >
+            <div class="testimonial-quote">
+              Base44 revolutionizes app development by enabling users t...
+            </div>
+            <div class="testimonial-author">
+              Eran Cohen
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limitless Section -->
+    <section class="bg-white fade-in">
+      <div class="container-center">
+        <h2 class="section-title-lg">
+          Consider yourself limitless.
+        </h2>
+        <div class="section-desc-lg">
+          If you can describe it, you can build it.
+        </div>
+        <div class="limitless-blocks">
+          <div
+            class="fade-in limitless-block bg1"
+          >
+            <div
+              class="limitless-text"
+            >
+              <h3>Create at the speed of thought</h3>
+              <div class="limitless-desc">
+                Tell Base44 your idea, and watch it transform into a working
+                app—complete with all the necessary components, pages, flows and
+                features.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img"
+            >
+              <img
+                src="/static/1.png"
+                alt="Create at the speed of thought"
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+          <div
+            class="fade-in limitless-block bg2 row-reverse"
+          >
+            <div
+              class="limitless-text right"
+            >
+              <h3>The backend’s built-in automatically</h3>
+              <div class="limitless-desc">
+                Everything your idea needs to function, like letting users sign
+                in, saving their data, or creating role-based permissions is
+                taken care of behind the scenes.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img left"
+            >
+              <img
+                src="/static/2.png"
+                alt="The backend’s built-in automatically"
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+          <div
+            class="fade-in limitless-block bg3"
+          >
+            <div
+              class="limitless-text"
+            >
+              <h3>Ready to use, instantly.</h3>
+              <div class="limitless-desc">
+                Our platform comes with built-in hosting, so when your app is
+                ready the only thing left to do is publish, put it to use, and
+                share it with your friends or community.
+              </div>
+              <a
+                href="#builder"
+                class="cta-btn"
+                class="cta-btn cta-btn-fit"
+                >Start building</a
+              >
+            </div>
+            <div
+              class="limitless-img"
+            >
+              <img
+                src="/static/3.png"
+                alt="Ready to use, instantly."
+                class="limitless-img-inner"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why yaso Section -->  
+    </section>
+    <section class="bg-d6dfff fade-in testimonials-section">
+      <div class="container-center">
+        <h2 class="section-title">
+          Why Choose Yaso AI?
+        </h2>
+        <div class="flex-wrap-center gap36">
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              No Code Required
+            </div>
+            <div class="faq-desc">
+              Anyone can build, launch, and scale AI apps.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              Lightning Fast
+            </div>
+            <div class="faq-desc">
+              Go from idea to app in seconds, not weeks.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+          >
+            <div class="faq-title">
+              Scalable & Secure
+            </div>
+            <div class="faq-desc">
+              Built for growth, with enterprise-grade security.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="fade-in bg-white">
+      <div class="container-center">
+        <h2 class="section-title-lg">
+        Pricing plans for every need
+        </h2>
+        <div class="section-desc-lg">
+        Scale as you go with plans designed to match your growth.
+        </div>
+        <div
+          style="
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f6e7ff;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 38px 28px;
+          "
+        >
+          <h3 class="pricing-title">
+            Start for free.
+          </h3>
+          <ul class="pricing-list">
+            <li class="pricing-list-item">All core features</li>
+            <li class="pricing-list-item">Built-in integrations</li>
+            <li class="pricing-list-item">Authentication system</li>
+            <li class="pricing-list-item">Database functionality</li>
+          </ul>
+          <a href="#builder" class="cta-btn cta-btn-full"
+            >Start building</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-f7f8fa fade-in">
+      <div class="container-center">
+        <h2 class="section-title center">
+          Frequently Asked Questions
+        </h2>
+        <div class="flex-col gap18">
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              Is any coding required?
+            </div>
+            <div class="faq-desc">
+              No coding is needed. Just describe your idea and Yaso AI does the
+              rest.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              Can I use my app commercially?
+            </div>
+            <div class="faq-desc">
+              Yes, you can launch and monetize your AI apps built with Yaso AI.
+            </div>
+          </div>
+          <div
+            class="fade-in card-hover"
+            style="
+              background: #fff;
+              border-radius: 12px;
+              padding: 18px 22px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            "
+          >
+            <div class="faq-title">
+              How fast can I launch?
+            </div>
+            <div class="faq-desc">
+              Most apps are ready in under a minute.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container-center">
+        <div class="footer-title">
+          Yaso AI
+        </div>
+        <div class="footer-desc">
+          Build AI apps instantly. No code. No limits.
+        </div>
+        <div class="footer-copy">
+          &copy; 2024 Yaso AI. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
