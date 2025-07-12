@@ -57,11 +57,17 @@ body {
   display: flex;
   gap: 32px;
   margin-left: 32px;
+  align-items: center;
+}
+
+/* Guarantee no underline for nav links and login button */
+.nav-btn, a.nav-btn, .nav-link, a.nav-link {
+  text-decoration: none !important;
 }
 
 .nav-link {
   color: #fff;
-  text-decoration: none;
+  text-decoration: none !important;
   font-size: 1.08rem;
   font-weight: 600;
   transition: color 0.2s;

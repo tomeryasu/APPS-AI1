@@ -5,6 +5,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="/static/style.css">
     <style>
+        /* body { overflow: hidden; }  Removed to allow scrolling if needed */
         .divider {
             display: flex;
             align-items: center;
@@ -74,6 +75,34 @@
         a, .nav-btn, .google-btn {
             text-decoration: none !important;
         }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 64px;
+        }
+        input[type="email"], input[type="password"], input[type="text"] {
+            border: none;
+            border-bottom: 2px solid #e0e0e0;
+            border-radius: 0;
+            background: transparent;
+            padding: 10px 4px 8px 4px;
+            font-size: 1.08rem;
+            transition: border-color 0.2s;
+            outline: none;
+            box-shadow: none;
+        }
+        input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+            border-bottom: 2px solid #6e5cff;
+            background: transparent;
+        }
+        h1 {
+            color: #181a20 !important;
+            font-family: 'Lato', sans-serif !important;
+            margin-bottom: 1.1rem !important;
+        }
     </style>
 </head>
 <body>
@@ -83,14 +112,14 @@
         </div>
     </div>
     <div class="hero">
-        <div class="container" style="max-width: 410px; margin-top: 40px; padding: 2.5rem 2.2rem 2.2rem 2.2rem; background: #fff; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
+        <div class="container" style="max-width: 370px; width: 100%; padding: 1.1rem 1.2rem 1.1rem 1.2rem; background: #fff; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.07); margin: 0 auto;">
             <h1 style="text-align:center; font-size:2.1rem; font-weight:700; margin-bottom:0.3rem;">Create your account</h1>
             <div class="subtitle">Sign up to get started with YASO AI</div>
             <a href="/login/google" class="google-btn">
                 <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Logo" class="google-logo">Sign up with Google
             </a>
             <div class="divider">or</div>
-            <form method="post" style="display:flex;flex-direction:column;gap:14px;">
+            <form method="post" style="display:flex;flex-direction:column;gap:16px;">
                 <label class="form-label" for="name">Full Name</label>
                 <input type="text" name="name" id="name" placeholder="Full Name" required>
                 <label class="form-label" for="email">Email</label>
