@@ -370,33 +370,33 @@
     <!-- Pricing Section -->
     <section class="fade-in bg-white">
       <div style="width: 100%; padding: 0 0 80px 0;">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 48px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; flex-wrap: nowrap;">
           <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-width: 260px;">
             <h2 class="section-title-lg" style="text-align: left;">Pricing plans for <span class="highlight-accent">every need</span></h2>
             <div class="section-desc-lg" style="text-align: left;">Scale as you go with plans designed to match your growth.</div>
           </div>
-          <div style="display: flex; flex-direction: row; gap: 36px; align-items: flex-start;">
-            <div class="pricing-card-animate" style="background: #fff; border-radius: 18px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 48px 36px; color: #23263a; max-width: 340px; min-width: 220px; text-align: center; border: 1.5px solid #e0e6f7; display: flex; flex-direction: column; align-items: center;">
+          <div style="display: flex; flex-direction: row; gap: 24px; align-items: flex-start; justify-content: flex-end; flex-wrap: nowrap; margin-left: 120px;">
+            <div class="pricing-card-animate" style="background: #fff; border-radius: 36px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 40px 24px; color: #23263a; max-width: 420px; min-width: 320px; text-align: center; border: 10px solid #1a237e; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s, transform 0.3s;">
               <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Start for free.</h3>
               <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$0</div>
               <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
-              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 18px; text-align: left;">
-                <li class="pricing-list-item">All core features</li>
-                <li class="pricing-list-item">Built-in integrations</li>
-                <li class="pricing-list-item">Authentication system</li>
-                <li class="pricing-list-item">Database functionality</li>
+              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 0; text-align: left; list-style: none;">
+                <li class="pricing-list-item">✔ All core features</li>
+                <li class="pricing-list-item">✔ Built-in integrations</li>
+                <li class="pricing-list-item">✔ Authentication system</li>
+                <li class="pricing-list-item">✔ Database functionality</li>
               </ul>
               <a href="#builder" class="cta-btn cta-btn-full" style="margin-top: 10px;">Start building</a>
             </div>
-            <div class="pricing-card-animate" style="background: #fff; border-radius: 18px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 48px 36px; color: #23263a; max-width: 340px; min-width: 220px; text-align: center; border: 1.5px solid #e0e6f7; display: flex; flex-direction: column; align-items: center;">
+            <div class="pricing-card-animate" style="background: #fff; border-radius: 36px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 40px 24px; color: #23263a; max-width: 420px; min-width: 320px; text-align: center; border: 10px solid #1a237e; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s, transform 0.3s;">
               <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Pro Plan</h3>
               <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$20</div>
               <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
-              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 18px; text-align: left;">
-                <li class="pricing-list-item">Everything in Free</li>
-                <li class="pricing-list-item">More credits</li>
-                <li class="pricing-list-item">Priority support</li>
-                <li class="pricing-list-item">Advanced integrations</li>
+              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 0; text-align: left; list-style: none;">
+                <li class="pricing-list-item">✔ Everything in Free</li>
+                <li class="pricing-list-item">✔ More credits</li>
+                <li class="pricing-list-item">✔ Priority support</li>
+                <li class="pricing-list-item">✔ Advanced integrations</li>
               </ul>
               <a href="#" class="cta-btn cta-btn-full" style="background: linear-gradient(90deg, #44e9ff 0%, #6e5cff 100%); margin-top: 10px;">See all plans</a>
             </div>
@@ -557,5 +557,22 @@
       </div>
     </footer>
     <script src="/static/script.js"></script>
+    <style>
+      .pricing-card-animate.js-hover {
+        box-shadow: 0 8px 40px 0 rgba(26,35,126,0.18), 0 2px 24px rgba(68,233,255,0.12);
+        transform: translateY(-12px) scale(1.04);
+        border-color: #3949ab;
+      }
+    </style>
+    <script>
+      document.querySelectorAll('.pricing-card-animate').forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+          card.classList.add('js-hover');
+        });
+        card.addEventListener('mouseleave', function() {
+          card.classList.remove('js-hover');
+        });
+      });
+    </script>
   </body>
 </html>
