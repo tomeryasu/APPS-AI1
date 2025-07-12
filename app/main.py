@@ -11,16 +11,24 @@ import traceback
 from app.auth import init_db, create_user, verify_user
 from fastapi import status
 from fastapi.responses import RedirectResponse
+from fastapi.middleware.cors import CORSMiddleware
 import os
 
 # Explicitly load .env from the project root
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
+OPENROUTER_API_KEY = "sk-PASTE-YOUR-KEY-HERE"  # <-- Replace with your actual OpenRouter API key
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_MODEL = "meta-llama/llama-3-70b-instruct"
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 templates = Jinja2Templates(directory="app/templates")
@@ -136,6 +144,39 @@ async def generate_app_json(data: dict = Body(...)):
 @app.get("/editor", response_class=HTMLResponse)
 async def editor(request: Request):
     return templates.TemplateResponse("editor.html", {"request": request})
+
+@app.post("/ai-chat")
+async def ai_chat(data: dict = Body(...)):
+    user_message = data.get("message", "")
+    # Instruct the model to generate a minimal HTML+CSS+JS web app for the prompt
+    ai_prompt = f"Generate a minimal HTML+CSS+JS web app for: {user_message}. Only return the HTML code."
+    payload = {
+        "model": "phi",  # switched to phi for faster, free local inference
+        "prompt": ai_prompt,
+        "stream": False
+    }
+    try:
+        res = requests.post("http://localhost:11434/api/generate", json=payload, timeout=120)
+        if res.status_code != 200:
+            error_msg = f"[Ollama error] Status {res.status_code}: {res.text}"
+            return JSONResponse({"reply": error_msg, "preview_html": ""}, status_code=500)
+        data = res.json()
+        print("/ai-chat Ollama response:", data)
+        reply = data.get("response", "[No reply from Ollama]")
+        preview_html = reply
+        if preview_html.strip().startswith("<"):
+            pass
+        elif "<html" in preview_html:
+            preview_html = preview_html[preview_html.find("<html") : ]
+        elif "<body" in preview_html:
+            preview_html = preview_html[preview_html.find("<body") : ]
+        elif "```" in preview_html:
+            preview_html = preview_html.replace("```html", "").replace("```", "").strip()
+    except requests.exceptions.Timeout:
+        return JSONResponse({"reply": "[Ollama error] Request timed out. Try a shorter or simpler prompt.", "preview_html": ""}, status_code=504)
+    except Exception as e:
+        return JSONResponse({"reply": f"[Ollama error] {str(e)}", "preview_html": ""}, status_code=500)
+    return {"reply": reply, "preview_html": preview_html}
 
 @app.post("/build")
 async def build_app(data: dict = Body(...)):

@@ -63,6 +63,52 @@
       background: #e0e6f7;
       align-self: flex-start;
       color: #23263a;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .ai-logo-css {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      margin-top: 0;
+      margin-right: 8px;
+      box-shadow: 0 1px 4px #44e9ff33;
+      background: linear-gradient(135deg, #44e9ff 0%, #6e5cff 100%);
+      flex-shrink: 0;
+      border: 2px solid #fff;
+      outline: 1.5px solid #6e5cff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #fff;
+      letter-spacing: 1px;
+      font-family: 'Lato', sans-serif;
+      user-select: none;
+      z-index: 2;
+    }
+    /* No text in the avatar */
+    .ai-logo-css span {
+      display: none;
+    }
+    .thinking-dots {
+      display: inline-block;
+      min-width: 1.2em;
+      letter-spacing: 1px;
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #6e5cff;
+      vertical-align: middle;
+      margin-left: 2px;
+      transition: color 0.2s;
+    }
+    .editor-chat-message.error {
+      background: #ffe0e0;
+      color: #b00020;
+      align-self: flex-start;
+      border: 1px solid #ffbdbd;
     }
     .editor-chat-input-row {
       display: flex;
@@ -129,6 +175,35 @@
       .editor-container { flex-direction: column; }
       .editor-main { height: 50vh; }
     }
+    .editor-preview-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      gap: 24px;
+    }
+    .editor-preview-loading-text {
+      text-align: center;
+      font-size: 1.15rem;
+      color: #23263a;
+      line-height: 1.6;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #e0e6f7;
+      border-top: 5px solid #44e9ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 8px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
@@ -149,7 +224,6 @@
     </div>
   </div>
   <script>
-    // Simple AI chat demo (replace fetch URL with your backend endpoint)
     const chatForm = document.getElementById('editorChatForm');
     const chatInput = document.getElementById('editorChatInput');
     const chatBox = document.getElementById('editorChat');
@@ -158,6 +232,44 @@
     function addMessage(text, sender) {
       const msg = document.createElement('div');
       msg.className = 'editor-chat-message ' + sender;
+      if (sender === 'ai') {
+        msg.style.display = 'flex';
+        msg.style.alignItems = 'flex-start';
+        // Add CSS-only logo avatar (circle with initials)
+        const logo = document.createElement('div');
+        logo.className = 'ai-logo-css';
+        // No initials, just a colored circle
+        msg.appendChild(logo);
+        // Add text span
+        const textSpan = document.createElement('span');
+        textSpan.style.display = 'inline-block';
+        textSpan.style.verticalAlign = 'middle';
+        textSpan.style.marginTop = '6px';
+        // Animated dots for Thinking...
+        if (text === 'Thinking...') {
+          textSpan.textContent = 'Thinking';
+          const dots = document.createElement('span');
+          dots.className = 'thinking-dots';
+          textSpan.appendChild(dots);
+          let dotCount = 0;
+          setInterval(() => {
+            dotCount = (dotCount + 1) % 4;
+            dots.textContent = '.'.repeat(dotCount);
+          }, 400);
+        } else {
+          textSpan.textContent = text;
+        }
+        msg.appendChild(textSpan);
+      } else {
+        msg.textContent = text;
+      }
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function addErrorMessage(text) {
+      const msg = document.createElement('div');
+      msg.className = 'editor-chat-message error';
       msg.textContent = text;
       chatBox.appendChild(msg);
       chatBox.scrollTop = chatBox.scrollHeight;
@@ -171,7 +283,6 @@
     const initialPrompt = getQueryParam('prompt');
     if (initialPrompt) {
       chatInput.value = initialPrompt;
-      // Optionally auto-send the prompt:
       setTimeout(() => {
         chatForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
       }, 200);
@@ -184,7 +295,56 @@
       addMessage(userMsg, 'user');
       chatInput.value = '';
       addMessage('Thinking...', 'ai');
-      // Replace with your backend AI endpoint
+      // Show loading animation in preview
+      preview.innerHTML = `
+        <div class="editor-preview-loading">
+          <div class="spinner"></div>
+          <div class="editor-preview-loading-text">
+            <strong>Creating Your App</strong><br>
+            This might take a few minutes...<br>
+            <span id="ai-typing-line" style="color:#6e5cff;white-space:pre;"></span>
+          </div>
+        </div>
+      `;
+      // Typing animation for the last line
+      const typingMessages = [
+        "Loading articles and user data initially.",
+        "Setting up navigation.",
+        "Styling the homepage.",
+        "Adding interactive widgets.",
+        "Optimizing layout for all devices.",
+        "Fetching latest content.",
+        "Finalizing your app preview."
+      ];
+      let typingIndex = 0;
+      let charIndex = 0;
+      let typingInterval;
+      const typingLine = document.getElementById('ai-typing-line');
+      function typeNextChar() {
+        if (!typingLine) return;
+        typingLine.textContent = typingMessages[typingIndex].slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex < typingMessages[typingIndex].length) {
+          typingInterval = setTimeout(typeNextChar, 40);
+        } else {
+          setTimeout(() => {
+            // Erase effect
+            function eraseChar() {
+              if (!typingLine) return;
+              typingLine.textContent = typingMessages[typingIndex].slice(0, charIndex - 1);
+              charIndex--;
+              if (charIndex > 0) {
+                setTimeout(eraseChar, 20);
+              } else {
+                typingIndex = (typingIndex + 1) % typingMessages.length;
+                setTimeout(typeNextChar, 400);
+              }
+            }
+            setTimeout(eraseChar, 800);
+          }, 1000);
+        }
+      }
+      typeNextChar();
       try {
         const res = await fetch('/ai-chat', {
           method: 'POST',
@@ -192,15 +352,62 @@
           body: JSON.stringify({ message: userMsg })
         });
         const data = await res.json();
-        // Remove the 'Thinking...' message
         chatBox.removeChild(chatBox.lastChild);
-        addMessage(data.reply, 'ai');
+        if (!res.ok) {
+          addErrorMessage(data.reply || 'Unknown error from backend.');
+          preview.innerHTML = '<div class="editor-preview-placeholder">Error: ' + (data.reply || 'Unknown error') + '</div>';
+          return;
+        }
+        // Typing animation for AI reply
+        function typeAiReply(text) {
+          const msg = document.createElement('div');
+          msg.className = 'editor-chat-message ai';
+          msg.style.display = 'flex';
+          msg.style.alignItems = 'flex-start';
+          // Add CSS-only logo avatar (circle with initials)
+          const logo = document.createElement('div');
+          logo.className = 'ai-logo-css';
+          logo.innerHTML = '<span>YA</span>';
+          msg.appendChild(logo);
+          // Add text span for typing
+          const textSpan = document.createElement('span');
+          textSpan.style.display = 'inline-block';
+          textSpan.style.verticalAlign = 'middle';
+          textSpan.style.marginTop = '6px';
+          msg.appendChild(textSpan);
+          chatBox.appendChild(msg);
+          chatBox.scrollTop = chatBox.scrollHeight;
+          let i = 0;
+          function typeChar() {
+            textSpan.textContent = text.slice(0, i + 1);
+            i++;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            if (i < text.length) {
+              setTimeout(typeChar, 18);
+            }
+          }
+          typeChar();
+        }
+        typeAiReply(data.reply);
         if (data.preview_html) {
-          preview.innerHTML = data.preview_html;
+          // Render in a sandboxed iframe for isolation
+          const iframe = document.createElement('iframe');
+          iframe.setAttribute('sandbox', 'allow-scripts allow-forms');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.border = 'none';
+          iframe.style.borderRadius = '18px';
+          // Write the HTML to the iframe
+          preview.innerHTML = '';
+          preview.appendChild(iframe);
+          iframe.contentWindow.document.open();
+          iframe.contentWindow.document.write(data.preview_html);
+          iframe.contentWindow.document.close();
         }
       } catch (err) {
         chatBox.removeChild(chatBox.lastChild);
-        addMessage('Error: Could not reach AI backend.', 'ai');
+        addErrorMessage('Error: Could not reach AI backend.');
+        preview.innerHTML = '<div class="editor-preview-placeholder">Error: Could not reach AI backend.</div>';
       }
     });
   </script>
