@@ -151,7 +151,7 @@ async def ai_chat(data: dict = Body(...)):
     # Instruct the model to generate a minimal HTML+CSS+JS web app for the prompt
     ai_prompt = f"Generate a minimal HTML+CSS+JS web app for: {user_message}. Only return the HTML code."
     payload = {
-        "model": "phi",  # switched to phi for faster, free local inference
+        "model": "llama2",  # switched to llama2 for better HTML generation
         "prompt": ai_prompt,
         "stream": False
     }
