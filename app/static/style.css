@@ -309,13 +309,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fafdff;
-  border-radius: 18px;
-  padding: 0.5rem 0.7rem 0.5rem 1.1rem;
   box-sizing: border-box;
   margin-bottom: 1.1rem;
-  border: 1.5px solid #e3e8f0;
-  box-shadow: 2px 2px 8px #e3e8f0, -2px -2px 8px #fff;
 }
 .input-row input[type="text"] {
   flex: 1;
@@ -359,7 +354,8 @@ body {
 .suggestions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 1.5rem;
+  margin-top: 15px;
   margin-bottom: 0.2rem;
   justify-content: center;
 }
@@ -776,7 +772,7 @@ body {
 
 /* === How it Works Section: Modern, Engaging Design === */
 .howitworks-modern-section {
-  background: linear-gradient(120deg, #eaf6ff 0%, #fafdff 100%);
+  background: #f1f5fe;
   padding: 72px 0 56px 0;
   position: relative;
   overflow: hidden;
@@ -965,9 +961,9 @@ body {
 
 /* ===== Footer ===== */
 .footer {
-  background: #eaf6ff;
+  background: #f1f5fe url('/static/footer-bg-2.png') center bottom no-repeat;
+  background-size: cover;
   padding: 48px 0 24px 0;
-  border-top: 1.5px solid #b3e0ff;
   text-align: left;
 }
 .footer-main {
@@ -1015,9 +1011,34 @@ body {
   font-weight: 700 !important;
 }
 .footer-bottom {
-  border-top: 1px solid #b3e0ff;
   padding-top: 18px;
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
   text-align: left;
+}
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.footer-bottom-right {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+}
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 12px;
+  display: inline-block;
 }
 .footer-copyright {
   color: #23263a;
@@ -1108,4 +1129,11 @@ body {
     padding: 1.2rem 0.5rem 1.2rem 0.5rem;
     border-radius: 18px;
   }
+}
+
+.footer-bg-wrapper {
+  background: #f1f5fe;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }

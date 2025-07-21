@@ -70,15 +70,13 @@
               </button>
             </div>
           </form>
-          <div class="suggestion-label">
-          </div>
-          <div class="suggestions">
-            <div class="suggestion-pill">Reporting Dashboard</div>
-            <div class="suggestion-pill">Gaming Platform</div>
-            <div class="suggestion-pill">Onboarding Portal</div>
-            <div class="suggestion-pill">Networking App</div>
-            <div class="suggestion-pill">Room Visualizer</div>
-          </div>
+        </div>
+        <div class="suggestions">
+          <div class="suggestion-pill">Reporting Dashboard</div>
+          <div class="suggestion-pill">Gaming Platform</div>
+          <div class="suggestion-pill">Onboarding Portal</div>
+          <div class="suggestion-pill">Networking App</div>
+          <div class="suggestion-pill">Room Visualizer</div>
         </div>
         {% if output %}
         <div class="output-container">
@@ -485,29 +483,35 @@
     <!-- Footer Section -->
     <footer class="footer">
       <div class="footer-main">
-        <div class="footer-cols">
-          <div class="footer-col">
-            <div class="footer-heading">Company</div>
-            <ul class="footer-links">
-              <li><a href="/pricing">Pricing</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-            </ul>
+                <div class="footer-bottom">
+          <div class="footer-bottom-left">
+            <img src="/static/logo.png" alt="YASO AI Logo" class="footer-logo" style="width:32px;height:32px;display:block;margin-bottom:6px;" />
+            <span class="footer-copyright">© 2025 YASO AI. All rights reserved.</span>
           </div>
-          <div class="footer-col">
-            <div class="footer-heading">Legal</div>
-            <ul class="footer-links">
-              <li><a href="/terms">Terms of Service</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/delete-account" class="footer-delete">Delete Account</a></li>
-            </ul>
+          <div class="footer-bottom-right">
+            <div class="footer-col">
+              <div class="footer-heading">Company</div>
+              <ul class="footer-links">
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="footer-heading">Legal</div>
+              <ul class="footer-links">
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/delete-account" class="footer-delete">Delete Account</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="footer-bottom">
-          <span class="footer-copyright">© 2025 YASO AI. All rights reserved.</span>
         </div>
       </div>
     </footer>
+    <div class="footer-bg-wrapper">
+      <img src="/static/footer-bg.png" alt="Footer Background" style="width:100vw;max-width:100%;display:block;margin:0 auto 0 auto;">
+    </div>
     <script src="/static/script.js"></script>
     <style>
       .pricing-card-animate.js-hover {
