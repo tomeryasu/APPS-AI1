@@ -11,21 +11,29 @@
     <link rel="stylesheet" href="/static/style.css" />
   </head>
   <body>
-    <div class="navbar">
-      <div class="nav-left">
-        <a href="/" class="logo"><span class="logo-icon"></span>Yaso AI</a>
-      </div>
-      <div class="nav-links">
-        {% if user_name %}
-        <span class="user-name">{{ user_name }}</span>
-        <a href="/dashboard" class="nav-link">Dashboard</a>
-        <a href="/logout" class="nav-link">Logout</a>
-        {% else %}
-        <a href="#" class="nav-link">Pricing</a>
-        <a href="#" class="nav-link">Enterprise</a>
-        <a href="/login" class="nav-btn nav-btn-margin">Login</a>
-        {% endif %}
-      </div>
+
+ <!-- Sleek, Rounded-Top Floating Navbar -->
+<nav class="sleek-navbar">
+  <div class="sleek-navbar-inner">
+    <!-- Logo (Left) -->
+    <a href="/" class="sleek-navbar-logo" aria-label="Home">
+      <span class="sleek-logo-bg">
+        <img src="/static/logo.png" alt="YASO AI Logo" width="36" height="36" style="display:block; border-radius:50%;" />
+      </span>
+    </a>
+    <!-- Center Navigation Links -->
+    <div class="sleek-navbar-links">
+      <a href="/pricing" class="sleek-navbar-link">Pricing</a>
+      <a href="/discover" class="sleek-navbar-link">Discover</a>
+    </div>
+    <!-- Right Side Buttons -->
+    <div class="sleek-navbar-actions">
+      <a href="/login" class="sleek-navbar-btn login">Login</a>
+      <a href="/signup" class="sleek-navbar-btn signup">Sign up</a>
+    </div>
+  </div>
+</nav>
+
     </div>
     <div class="main-content-fit">
       <div class="main-hero">
@@ -37,6 +45,14 @@
           Yaso AI lets you create production-ready AI apps in seconds. Just
           describe your idea and launch. No coding, no waiting, no limits.
         </div>
+
+<!-- Place this directly under the .main-sub in your hero section -->
+
+<div class="hero-cta-btns">
+  <a href="/app/create" class="hero-btn primary">Start Creating</a>
+  <a href="/learn-more" class="hero-btn secondary">Learn More</a>
+</div>
+
         <div class="cta-row"></div>
       </div>
       <div class="builder-section" id="builder">
@@ -55,7 +71,6 @@
             </div>
           </form>
           <div class="suggestion-label">
-            Not sure where to start? Try one of these:
           </div>
           <div class="suggestions">
             <div class="suggestion-pill">Reporting Dashboard</div>
@@ -399,63 +414,36 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+
+
     <!-- why yaso Section -->  
-    </section>
-    <section class="bg-d6dfff fade-in testimonials-section">
-      <div class="container-center">
-        <h2 class="section-title">
-          Why Choose Yaso AI?
-        </h2>
-        <div class="flex-wrap-center gap36">
-          <div
-            class="fade-in card-hover"
-          >
-            <div class="faq-title">
-              No Code Required
-            </div>
-            <div class="faq-desc">
-              Anyone can build, launch, and scale AI apps.
-            </div>
-          </div>
-          <div
-            class="fade-in card-hover"
-          >
-            <div class="faq-title">
-              Lightning Fast
-            </div>
-            <div class="faq-desc">
-              Go from idea to app in seconds, not weeks.
-            </div>
-          </div>
-          <div
-            class="fade-in card-hover"
-          >
-            <div class="faq-title">
-              Scalable & Secure
-            </div>
-            <div class="faq-desc">
-              Built for growth, with enterprise-grade security.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Pricing Section -->
 
-    <!-- FAQ Section -->
-
     <!-- Footer Section -->
     <footer class="footer">
-      <div class="container-center">
-        <div class="footer-title">
-          Yaso AI
+      <div class="footer-main">
+        <div class="footer-cols">
+          <div class="footer-col">
+            <div class="footer-heading">Company</div>
+            <ul class="footer-links">
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/contact">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-heading">Legal</div>
+            <ul class="footer-links">
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/delete-account" class="footer-delete">Delete Account</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-desc">
-          Build AI apps instantly. No code. No limits.
-        </div>
-        <div class="footer-copy">
-          &copy; 2024 YASO AI. All rights reserved.
+        <div class="footer-bottom">
+          <span class="footer-copyright">© 2025 YASO AI. All rights reserved.</span>
         </div>
       </div>
     </footer>

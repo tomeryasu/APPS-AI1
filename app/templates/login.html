@@ -111,29 +111,27 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-left">
-            <a href="/" class="logo"><span class="logo-icon"></span>YASO AI</a>
-        </div>
-    </div>
-    <div class="hero">
-        <div class="container" style="max-width: 410px; margin-top: 40px; padding: 2.5rem 2.2rem 2.2rem 2.2rem; background: #fff; border-radius: 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
-            <h1 style="text-align:center; font-size:2.1rem; font-weight:700; margin-bottom:0.3rem;">Sign in to your account</h1>
-            <div class="subtitle">Welcome back to YASO AI</div>
-            <a href="/login/google" class="google-btn">
-                <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Logo" class="google-logo">Sign in with Google
-            </a>
-            <div class="divider">or</div>
-            <form method="post" style="display:flex;flex-direction:column;gap:14px;">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label class="form-label" for="password">Password <a href="#" class="forgot-link">Forgot?</a></label>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-                <input type="submit" value="Login" class="nav-btn">
-            </form>
-            <div class="footer-link">Don't have an account? <a href="/signup">Sign up</a></div>
-            {% if error %}<p style="color:#ff7f50;text-align:center;">{{ error }}</p>{% endif %}
-        </div>
+    <div class="signup-bg">
+      <div class="signup-card">
+        <a href="/" class="signup-logo-link">
+          <img src="/static/logo.png" alt="YASO AI Logo" class="signup-logo-img" />
+        </a>
+        <h1 class="signup-title">Sign in to your account</h1>
+        <div class="subtitle">Welcome back to YASO AI</div>
+        <a href="/login/google" class="google-btn">
+          <img src="https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png" alt="Google Logo" class="google-logo">Sign in with Google
+        </a>
+        <div class="divider">or</div>
+        <form method="post" class="signup-form">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" required>
+          <label class="form-label" for="password">Password <a href="#" class="forgot-link">Forgot?</a></label>
+          <input type="password" name="password" id="password" placeholder="Password" required>
+          <button type="submit" class="nav-btn signup-btn">Sign In</button>
+        </form>
+        <div class="footer-link">Don't have an account? <a href="/signup">Sign up</a></div>
+        {% if error %}<p style="color:#ff7f50;text-align:center;">{{ error }}</p>{% endif %}
+      </div>
     </div>
 </body>
 </html>
