@@ -421,6 +421,67 @@
 
     <!-- Pricing Section -->
 
+ <!-- ... (rest of your HTML above) ... -->
+
+    <!-- How it works Section -->
+    <section class="howitworks-modern-section">
+      <div class="howitworks-modern-container">
+        <h2 class="howitworks-modern-title">How it works</h2>
+        <h2 class="howitworks-modern-text">Transform your app ideas into beautiful UI designs in just a few simple steps.</h2>
+        <div class="howitworks-modern-steps">
+          <!-- Step 1 -->
+          <div class="howitworks-modern-step">
+            <div class="howitworks-modern-icon">
+              <!-- Pencil/idea SVG -->
+              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#E3F6FF"/><path d="M13 23l2.5-7.5L23 13l-7.5 2.5L13 23z" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23" cy="13" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/></svg>
+            </div>
+            <div class="howitworks-modern-step-title">Describe your app</div>
+            <div class="howitworks-modern-step-desc">Tell us what you want to build in plain English.</div>
+          </div>
+          <!-- Arrow -->
+          <div class="howitworks-modern-arrow">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- Step 2 -->
+          <div class="howitworks-modern-step">
+            <div class="howitworks-modern-icon">
+              <!-- Magic wand SVG -->
+              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#F3EFFF"/><path d="M12 24l12-12" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="1.5" fill="#6E5CFF"/><circle cx="12" cy="24" r="1.5" fill="#44E9FF"/></svg>
+            </div>
+            <div class="howitworks-modern-step-title">AI generates your UI</div>
+            <div class="howitworks-modern-step-desc">Our AI instantly creates a beautiful, editable app design.</div>
+          </div>
+          <!-- Arrow -->
+          <div class="howitworks-modern-arrow">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- Step 3 -->
+          <div class="howitworks-modern-step">
+            <div class="howitworks-modern-icon">
+              <!-- Edit/brush SVG -->
+              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#E3F6FF"/><path d="M22 14l-8 8m0 0h4m-4 0v-4" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/></svg>
+            </div>
+            <div class="howitworks-modern-step-title">Refine & customize</div>
+            <div class="howitworks-modern-step-desc">Tweak layouts, colors, and features to fit your vision.</div>
+          </div>
+          <!-- Arrow -->
+          <div class="howitworks-modern-arrow">
+            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <!-- Step 4 -->
+          <div class="howitworks-modern-step">
+            <div class="howitworks-modern-icon">
+              <!-- Export/cloud SVG -->
+              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#F3EFFF"/><path d="M18 12v8m0 0l-3-3m3 3l3-3" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="26" r="1.5" fill="#6E5CFF"/></svg>
+            </div>
+            <div class="howitworks-modern-step-title">Export & launch</div>
+            <div class="howitworks-modern-step-desc">Export your app and share it with the world instantly.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- ... (rest of your HTML below) ... -->
+
     <!-- Footer Section -->
     <footer class="footer">
       <div class="footer-main">
@@ -464,6 +525,52 @@
           card.classList.remove('js-hover');
         });
       });
+      // Typing effect for builder input
+      (function() {
+        const options = [
+          "Design an accessible health tracking UI",
+          "Design a user-friendly travel app layout",
+          "Create a colorful social media interface",
+          "Create a mobile-first e-commerce design",
+          "Build a smart fitness progress dashboard",
+          "Design a modern recipe sharing platform",
+          "Create a collaborative project management tool",
+          "Launch a real-time language learning app",
+          "Design a minimalist personal finance tracker",
+          "Build an interactive event planning calendar",
+          "Create a secure team messaging workspace",
+          "Design a beautiful portfolio website for creatives"
+        ];
+        const input = document.getElementById('modalPrompt');
+        let optionIndex = 0;
+        let charIndex = 0;
+        let typing = true;
+        function type() {
+          if (!input) return;
+          if (typing) {
+            if (charIndex < options[optionIndex].length) {
+              input.setAttribute('placeholder', options[optionIndex].slice(0, charIndex + 1));
+              charIndex++;
+              setTimeout(type, 40);
+            } else {
+              input.setAttribute('placeholder', options[optionIndex] + '...');
+              typing = false;
+              setTimeout(type, 700);
+            }
+          } else {
+            if (charIndex > 0) {
+              input.setAttribute('placeholder', options[optionIndex].slice(0, charIndex - 1));
+              charIndex--;
+              setTimeout(type, 15);
+            } else {
+              typing = true;
+              optionIndex = (optionIndex + 1) % options.length;
+              setTimeout(type, 400);
+            }
+          }
+        }
+        type();
+      })();
     </script>
   </body>
 </html>
