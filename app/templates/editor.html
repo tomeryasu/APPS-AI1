@@ -235,16 +235,28 @@
       if (sender === 'ai') {
         msg.style.display = 'flex';
         msg.style.alignItems = 'flex-start';
-        // Add CSS-only logo avatar (circle with initials)
-        const logo = document.createElement('div');
-        logo.className = 'ai-logo-css';
-        // No initials, just a colored circle
-        msg.appendChild(logo);
+        // Show logo image only for Thinking... message
+        if (text === 'Thinking...') {
+          const logoImg = document.createElement('img');
+          logoImg.src = '/static/logo.png';
+          logoImg.alt = 'YASO AI Logo';
+          logoImg.style.width = '28px';
+          logoImg.style.height = '28px';
+          logoImg.style.marginRight = '4px';
+          logoImg.style.display = 'inline-block';
+          logoImg.style.verticalAlign = 'middle';
+          msg.appendChild(logoImg);
+        } else {
+          // Add CSS-only logo avatar (circle with initials)
+          const logo = document.createElement('div');
+          logo.className = 'ai-logo-css';
+          msg.appendChild(logo);
+        }
         // Add text span
         const textSpan = document.createElement('span');
         textSpan.style.display = 'inline-block';
         textSpan.style.verticalAlign = 'middle';
-        textSpan.style.marginTop = '6px';
+        textSpan.style.marginTop = '0';
         // Animated dots for Thinking...
         if (text === 'Thinking...') {
           textSpan.textContent = 'Thinking';

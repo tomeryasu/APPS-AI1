@@ -620,7 +620,7 @@ body {
   box-shadow: 0 2px 8px #b3e0ff44;
   text-decoration: none;
   display: inline-block;
-  background: linear-gradient(90deg, #60A5FA 0%, #3B82F6 100%);
+  background: linear-gradient(90deg, #000 0%, #242424 100%);
   color: #fff;
   margin-top: 12px;
   letter-spacing: 0.01em;
@@ -630,7 +630,7 @@ body {
 .cta-btn-fit:hover,
 .cta-btn:focus,
 .cta-btn-fit:focus {
-  background: linear-gradient(90deg, #2563eb 0%, #60A5FA 100%);
+  background: linear-gradient(90deg, #242424 0%, #393939 100%);
   color: #fff;
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 4px 16px #60A5FA44;
@@ -654,14 +654,13 @@ body {
 .limitless-block {
   display: flex;
   align-items: center;
-  background: #23263a;
-  border-radius: 24px;
+  background: #f4f4f4;
+  border-radius: 30px;
   box-shadow: 0 4px 24px rgba(68, 233, 255, 0.10);
   padding: 120px 100px;
   gap: 100px;
-  border: 1.5px solid #35395a;
   max-width: 1600px;
-  min-height: 420px;
+  min-height: 480px;
   margin: 0 auto;
 }
 .limitless-block.row-reverse {
@@ -682,13 +681,13 @@ body {
   text-align: right;
 }
 .limitless-text h3 {
-  color: #fff;
+  color: #000;
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 10px;
 }
 .limitless-desc {
-  color: #c7c9d9;
+  color: #000;
   font-size: 1.08rem;
   margin-bottom: 18px;
 }
@@ -704,7 +703,7 @@ body {
   height: 100%;
   max-width: none;
   max-height: none;
-  border-radius: 16px;
+  border-radius: 30px;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(68, 233, 255, 0.1);
   display: block;
