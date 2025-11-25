@@ -7,6 +7,7 @@ body {
   color: #1A1A1A;
   min-height: 100vh;
   letter-spacing: -0.01em;
+  text-align: rtl;
 }
 
 /* 12-column grid and centering */

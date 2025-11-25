@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>YASO AI – Build AI Apps Instantly</title>
+    <title>NEXTAGENT AI – Build AI Apps Instantly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/static/logo.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/static/style.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css?v=4" />
   </head>
   <body>
 
@@ -18,39 +26,65 @@
   <div class="sleek-navbar-inner">
     <!-- Logo (Left) -->
     <a href="/" class="sleek-navbar-logo" aria-label="Home">
+      <span class="navbar-brand-text">NEXTAGENT AI</span>
       <img src="/static/logo.png" alt="YASO AI Logo" width="36" height="36" style="display:block;vertical-align:middle;" />
-      <span class="navbar-brand-text">YASO AI</span>
     </a>
     <!-- Center Navigation Links -->
     <div class="sleek-navbar-links">
-      <a href="/pricing" class="sleek-navbar-link">Pricing</a>
-      <a href="/discover" class="sleek-navbar-link">Discover</a>
+      <a href="/pricing" class="sleek-navbar-link">מחירים</a>
+      <a href="/discover" class="sleek-navbar-link">תוכניות</a>
     </div>
     <!-- Right Side Buttons -->
     <div class="sleek-navbar-actions">
-      <a href="/login" class="sleek-navbar-btn login">Login</a>
-      <a href="/signup" class="sleek-navbar-btn signup">Sign up</a>
+      <a href="/login" class="sleek-navbar-btn login">התחבר</a>
+      <a href="/signup" class="sleek-navbar-btn signup">הרשם</a>
     </div>
   </div>
 </nav>
+<!-- MOBILE NAVBAR -->
+<nav class="mobile-navbar">
+  <div class="mobile-navbar-inner">
+
+    <!-- לוגו + טקסט (משמאל) -->
+    <a href="/" class="mobile-navbar-logo">
+      <img src="/static/logo.png" width="40" height="40" alt="Logo">
+      <span>NEXTAGENT AI</span>
+    </a>
+
+    <!-- כפתור המבורגר (מימין) -->
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- תפריט נפתח -->
+  <div class="mobile-navbar-menu">
+    <a href="/pricing">מחירים</a>
+    <a href="/discover">תוכניות</a>
+    <a href="/login">התחבר</a>
+    <a href="/signup">הרשם</a>
+  </div>
+</nav>
+
+
 
     </div>
     <div class="main-content-fit">
       <div class="main-hero">
         <div class="main-title">
-          Build AI apps <span class="highlight">instantly.</span> No code. No
-          limits.
+          מובילים את המהפכה<br> <span class="highlight"> העסקית </span> של AI בישראל
         </div>
         <div class="main-sub">
-          Yaso AI lets you create production-ready AI apps in seconds. Just
-          describe your idea and launch. No coding, no waiting, no limits.
+          שותפים אסטרטגיים להטמעת בינה מלאכותית שמניבה תוצאות
         </div>
 
 <!-- Place this directly under the .main-sub in your hero section -->
 
 <div class="hero-cta-btns">
-  <a href="/app/create" class="hero-btn primary">Start Creating</a>
-  <a href="/learn-more" class="hero-btn secondary">Learn More</a>
+  <a href="/app/create" class="hero-btn primary"> צור קשר </a>
+  <a href="/learn-more" class="hero-btn secondary">למידע נוסף</a>
 </div>
 
         <div class="cta-row"></div>
@@ -72,12 +106,13 @@
           </form>
         </div>
         <div class="suggestions">
-          <div class="suggestion-pill">Reporting Dashboard</div>
-          <div class="suggestion-pill">Gaming Platform</div>
-          <div class="suggestion-pill">Onboarding Portal</div>
-          <div class="suggestion-pill">Networking App</div>
-          <div class="suggestion-pill">Room Visualizer</div>
-        </div>
+  <div class="suggestion-pill">סוכן צ'אט חכם</div>
+<div class="suggestion-pill">דשבורד ניהול לקוחות</div>
+<div class="suggestion-pill">מערכת ניתוח לידים</div>
+<div class="suggestion-pill">אוטומציה למכירות</div>
+<div class="suggestion-pill">סוכן תמיכה בזמן אמת</div>
+</div>
+
         {% if output %}
         <div class="output-container">
           <pre id="output">{{ output }}</pre>
@@ -102,417 +137,604 @@
             alt="avatar3"
           />
         </div>
-        <div class="trusted-text">Trusted by 300K+ users</div>
+        <div class="trusted-text">מעל ל25k משתמשים רשומים!</div>
       </div>
     </div>
+<!-- Testimonials Section -->
+<section class="bg-white">
+  <div>
+    <h2 class="section-title-lg">"אוקיי, ‏@nextagent_ai הפתיעו אותי לגמרי."</h2>
+    <div class="section-desc-lg">
+      ועוד דברים מצוינים שהמשתמשים שלנו אומרים עלינו.
+    </div>
+    <a href="/editor" class="cta-btn cta-btn-mb">התחל לבנות</a>
+    <div class="testimonial-marquee-container">
+      <div class="testimonial-marquee-row1" id="row1"></div>
+      <div class="testimonial-marquee-row2" id="row2"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials Section -->
-    <section class="bg-white">
-      <div>
-        <h2 class="section-title-lg">“Okay, @yaso_ai has blown my mind.”</h2>
-        <div class="section-desc-lg">
-          And other great things our users say about us.
+<script>
+const testimonials = [
+  {name:'דוד לוי', user:'@davidlevi', img:'https://randomuser.me/api/portraits/men/10.jpg', quote:'NEXTAGENT AI שדרג את העסק שלי באופן מיידי!'},
+  {name:'שרה כהן', user:'@sarahcohen', img:'https://randomuser.me/api/portraits/women/11.jpg', quote:'האינטליגנציה המלאכותית חוסכת לי שעות עבודה כל יום.'},
+  {name:'יוסי מזרחי', user:'@yossim', img:'https://randomuser.me/api/portraits/men/12.jpg', quote:'מעולם לא היה לי כל כך קל לנהל לקוחות עם AI.'},
+  {name:'רונית אביטל', user:'@ronitab', img:'https://randomuser.me/api/portraits/women/13.jpg', quote:'אני רואה שיפור מיידי ברווחים מאז שהתחלתי להשתמש ב-NEXTAGENT AI.'},
+  {name:'אילן ברק', user:'@ilanbrk', img:'https://randomuser.me/api/portraits/men/14.jpg', quote:'ה-AI עוזר לי לסגור עסקאות מהר יותר ולהתמקד במה שחשוב.'},
+  {name:'מיה גפן', user:'@miagefen', img:'https://randomuser.me/api/portraits/women/15.jpg', quote:'מעולם לא חשבתי שסוכן AI יכול להיות כזה חכם ואינטואיטיבי.'},
+  {name:'רון לוי', user:'@ronlevi', img:'https://randomuser.me/api/portraits/men/16.jpg', quote:'היישום פשוט מקסים – חוסך לי זמן וכסף בכל יום.'},
+  {name:'נועה שחר', user:'@noashachar', img:'https://randomuser.me/api/portraits/women/17.jpg', quote:'שיפור אדיר בתקשורת עם הלקוחות – הכל נעשה חלק ויעיל.'},
+  {name:'עידו פרץ', user:'@idopertz', img:'https://randomuser.me/api/portraits/men/18.jpg', quote:'ה-AI נתן לי יתרון מול המתחרים בצורה מיידית.'},
+  {name:'דנה כהן', user:'@danacohen', img:'https://randomuser.me/api/portraits/women/18.jpg', quote:'מעולם לא היה לי קל יותר לנהל פניות מלקוחות.'},
+  {name:'רועי לוי', user:'@roilevi', img:'https://randomuser.me/api/portraits/men/19.jpg', quote:'חווית המשתמש של NEXTAGENT AI פשוט מושלמת.'},
+  {name:'טליה לוין', user:'@talialevin', img:'https://randomuser.me/api/portraits/women/19.jpg', quote:'אני רואה יותר סגירות עסקאות בכל חודש.'},
+  {name:'אורי כהן', user:'@uricohen', img:'https://randomuser.me/api/portraits/men/20.jpg', quote:'NEXTAGENT AI מהפכה את הדרך שבה אני עובד עם לקוחות.'},
+  {name:'מיקה ברק', user:'@mikabrk', img:'https://randomuser.me/api/portraits/women/20.jpg', quote:'חוסך לי זמן ומאפשר להתמקד בהגדלת העסק.'},
+  {name:'גיא לוי', user:'@gilevi', img:'https://randomuser.me/api/portraits/men/21.jpg', quote:'ה-AI פשוט מבין אותי ומה שאני צריך.'},
+  {name:'סיון לוי', user:'@sivonlevi', img:'https://randomuser.me/api/portraits/women/21.jpg', quote:'כל יום אני מתרשם מחדש מהיכולות של NEXTAGENT AI.'},
+  {name:'רן מזרחי', user:'@ranmiz', img:'https://randomuser.me/api/portraits/men/22.jpg', quote:'מאפשר לי להתמקד במה שחשוב באמת בעסק שלי.'},
+  {name:'גליה כהן', user:'@galiacohen', img:'https://randomuser.me/api/portraits/women/22.jpg', quote:'שירות AI מושלם שמסייע לי להגדיל את הרווחים.'},
+  {name:'אדם ברק', user:'@adambrk', img:'https://randomuser.me/api/portraits/men/23.jpg', quote:'מעולם לא היה לי כזה כלי חכם לניהול העסק.'},
+  {name:'ליה שחר', user:'@liashachar', img:'https://randomuser.me/api/portraits/women/23.jpg', quote:'אני פשוט מרוצה מהתוצאות שמתקבלות תוך דקות.'},
+  {name:'יונתן לוי', user:'@yonatanlevi', img:'https://randomuser.me/api/portraits/men/24.jpg', quote:'שיפור משמעותי בפרודוקטיביות שלי עם NEXTAGENT AI.'},
+  {name:'ענבר כהן', user:'@inbarcohen', img:'https://randomuser.me/api/portraits/women/24.jpg', quote:'AI שמבין בדיוק מה העסק שלי צריך בכל רגע.'},
+  {name:'דניאל מזרחי', user:'@danielmiz', img:'https://randomuser.me/api/portraits/men/25.jpg', quote:'הכל פשוט ויעיל – שווה כל שקל!'},
+  {name:'מירי לוי', user:'@mirilevi', img:'https://randomuser.me/api/portraits/women/25.jpg', quote:'שירות מלא ומקצועי שמסייע לגדול מהר.'},
+  {name:'עמית כהן', user:'@amitcohen', img:'https://randomuser.me/api/portraits/men/26.jpg', quote:'ה-AI פשוט משדרג כל תהליך בעסק שלי.'},
+  {name:'טל שחר', user:'@talshachar', img:'https://randomuser.me/api/portraits/women/26.jpg', quote:'מעולם לא חשבתי שאפשר לנהל עסק כל כך בקלות.'},
+  {name:'ניר ברק', user:'@nirbrk', img:'https://randomuser.me/api/portraits/men/27.jpg', quote:'כל יום אני מתרשם מחדש מהיכולות של NEXTAGENT AI.'},
+  {name:'אור כהן', user:'@orcohen', img:'https://randomuser.me/api/portraits/women/27.jpg', quote:'מאפשר לי להיות מהיר יותר, חכם יותר, ויעיל יותר.'},
+  {name:'דניאל לוי', user:'@danlevi', img:'https://randomuser.me/api/portraits/men/28.jpg', quote:'ה-AI פשוט מחבר אותי עם הלקוחות בצורה מושלמת.'},
+  {name:'מיקה כהן', user:'@mikacohen', img:'https://randomuser.me/api/portraits/women/28.jpg', quote:'מעולם לא היה לי כלי כזה חכם ואמין.'},
+  {name:'ראובן מזרחי', user:'@reuvmiz', img:'https://randomuser.me/api/portraits/men/29.jpg', quote:'שיפור אדיר בביצועים של העסק שלי תוך ימים.'},
+  {name:'רוני לוי', user:'@ronilevi', img:'https://randomuser.me/api/portraits/women/29.jpg', quote:'חווית משתמש מושלמת, אני ממליצה בחום!'},
+  {name:'גלעד ברק', user:'@giladbrk', img:'https://randomuser.me/api/portraits/men/30.jpg', quote:'כלים מתקדמים שעוזרים לי לצמוח מהר יותר.'},
+  {name:'טליה כהן', user:'@taliacohen', img:'https://randomuser.me/api/portraits/women/30.jpg', quote:'אני פשוט מתאהבת בכל עדכון חדש של NEXTAGENT AI.'},
+  {name:'אייל לוי', user:'@eyallevi', img:'https://randomuser.me/api/portraits/men/31.jpg', quote:'פשוט שדרוג מהפכני לניהול העסק שלי.'},
+  {name:'יעל מזרחי', user:'@yaelmiz', img:'https://randomuser.me/api/portraits/women/31.jpg', quote:'מעולם לא היה לי קל יותר עם לקוחות חדשים.'},
+  {name:'דני ברק', user:'@danybrk', img:'https://randomuser.me/api/portraits/men/32.jpg', quote:'כל יום אני לומד משהו חדש על העסק שלי עם AI.'},
+  {name:'שיר לוי', user:'@shirlevi', img:'https://randomuser.me/api/portraits/women/32.jpg', quote:'מעולה! השירות עוזר לי לנהל הכל בצורה חלקה.'}
+];
+
+// מערבבים ומכפילים ליצירת רצף חלק
+function shuffle(array) {
+  for (let i = array.length -1; i>0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function renderTestimonials() {
+  const shuffled = shuffle([...testimonials]);
+  const row1 = document.getElementById('row1');
+  const row2 = document.getElementById('row2');
+
+  row1.innerHTML = '';
+  row2.innerHTML = '';
+
+  // יוצרים רצף כפול לכל שורה כדי למנוע קפיצות
+  const row1Items = shuffled.slice(0,20);
+  const row2Items = shuffled.slice(20,40);
+
+  const generateHTML = tArray => tArray.map(t => `
+    <div class="testimonial-card bg1">
+      <img class="testimonial-avatar" src="${t.img}" alt="${t.name}" />
+      <div class="testimonial-quote">${t.quote}</div>
+      <div class="testimonial-author">${t.name} <span class="testimonial-handle">${t.user}</span></div>
+    </div>
+  `).join('');
+
+  row1.innerHTML = generateHTML(row1Items) + generateHTML(row1Items);
+  row2.innerHTML = generateHTML(row2Items) + generateHTML(row2Items);
+}
+
+window.onload = renderTestimonials;
+</script>
+
+
+   <!-- Limitless Section -->
+<section class="bg-white fade-in">
+  <div class="container-center">
+    <h2 class="section-title-lg">
+      תחשוב על עצמך כבלתי מוגבל.
+    </h2>
+    <div class="section-desc-lg">
+      אם אתה יכול לתאר את זה, אתה גם יכול לבנות את זה.
+    </div>
+    <div class="limitless-blocks">
+      <div
+        class="fade-in limitless-block bg1"
+      >
+        <div
+          class="limitless-text"
+        >
+          <h3>צור במהירות המחשבה</h3>
+          <div class="limitless-desc">
+            ספר ל-NEXTAGENT AI על הרעיון שלך וצפה בו מתממש לאפליקציה עובדת—
+            עם כל הרכיבים, הדפים, הזרימות והפיצ’רים הנדרשים.
+          </div>
+          <a
+            href="/editor"
+            class="cta-btn cta-btn-fit"
+            >התחל לבנות</a>
         </div>
-        <a href="/editor" class="cta-btn cta-btn-mb">Start building</a>
-        <div class="testimonial-marquee-container">
-          <div class="testimonial-marquee-row1">
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Best of Philosophy" />
-              <div class="testimonial-quote">YASO AI looks perfect for founders who want to build fast without...</div>
-              <div class="testimonial-author">Best of Philosophy <span class="testimonial-handle">@BotPhilosophyQ</span></div>
-              <div class="testimonial-socials">
-                <!-- X (Twitter) -->
-                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/11.jpg" alt="Hasan Toor" />
-              <div class="testimonial-quote">You can now build a full AI app without writing any code. YASO AI to...</div>
-              <div class="testimonial-author">Hasan Toor <span class="testimonial-handle">@hasantoxr</span></div>
-              <div class="testimonial-socials">
-                <!-- GitHub -->
-                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg3">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Maria Martin" />
-              <div class="testimonial-quote">Okay, YASO AI has blown my mind 🤯. No iterations, no changes,...</div>
-              <div class="testimonial-author">Maria Martin <span class="testimonial-handle">@marias_martin</span></div>
-              <div class="testimonial-socials">
-                <!-- LinkedIn -->
-                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/13.jpg" alt="Gleb Konon" />
-              <div class="testimonial-quote">Just built this awesome web app using @yaso_ai! I'm blown awa...</div>
-              <div class="testimonial-author">Gleb Konon</div>
-              <div class="testimonial-socials">
-                <!-- Facebook -->
-                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/14.jpg" alt="Richard Manisa" />
-              <div class="testimonial-quote">What makes YASO AI different is that the interaction with the AI is...</div>
-              <div class="testimonial-author">Richard Manisa</div>
-              <div class="testimonial-socials">
-                <!-- X (Twitter) -->
-                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg3">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/15.jpg" alt="Masiar Ighani" />
-              <div class="testimonial-quote">One of the best AI Coders out there. I tried many of them. What...</div>
-              <div class="testimonial-author">Masiar Ighani</div>
-              <div class="testimonial-socials">
-                <!-- GitHub -->
-                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-              </div>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Best of Philosophy" />
-              <div class="testimonial-quote">YASO AI looks perfect for founders who want to build fast without...</div>
-              <div class="testimonial-author">Best of Philosophy <span class="testimonial-handle">@BotPhilosophyQ</span></div>
-              <div class="testimonial-socials">
-                <!-- LinkedIn -->
-                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/11.jpg" alt="Hasan Toor" />
-              <div class="testimonial-quote">You can now build a full AI app without writing any code. This to...</div>
-              <div class="testimonial-author">Hasan Toor <span class="testimonial-handle">@hasantoxr</span></div>
-              <div class="testimonial-socials">
-                <!-- Facebook -->
-                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg3">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Maria Martin" />
-              <div class="testimonial-quote">Okay,YASO AI has blown my mind 🤯. No iterations, no changes,...</div>
-              <div class="testimonial-author">Maria Martin <span class="testimonial-handle">@marias_martin</span></div>
-              <div class="testimonial-socials">ssh-keygen -t ed25519 -C "your_email@example.com"
-                <!-- X (Twitter) -->
-                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
-              </div>
-            </div>
-          </div>
-          <div class="testimonial-marquee-row2">
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/16.jpg" alt="Ariel MI" />
-              <div class="testimonial-quote">Amazing understanding of the user needs and thorough handli...</div>
-              <div class="testimonial-author">Ariel MI</div>
-              <div class="testimonial-socials">
-                <!-- GitHub -->
-                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/17.jpg" alt="Thatweb3guy" />
-              <div class="testimonial-quote">@MS_YASOAI @yaso_ai I gave it a try and I must to be truthful, it...</div>
-              <div class="testimonial-author">Thatweb3guy <span class="testimonial-handle">@myfootyfantasy</span></div>
-              <div class="testimonial-socials">
-                <!-- LinkedIn -->
-                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg3">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/18.jpg" alt="Roy Kotzer" />
-              <div class="testimonial-quote">Start building in minutes. See results immediately. Great!</div>
-              <div class="testimonial-author">Roy Kotzer</div>
-              <div class="testimonial-socials">
-                <!-- Facebook -->
-                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/19.jpg" alt="Erel Cohen" />
-              <div class="testimonial-quote">Fastest Aha! moment I have ever had.</div>
-              <div class="testimonial-author">Erel Cohen</div>
-              <div class="testimonial-socials">
-                <!-- X (Twitter) -->
-                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/20.jpg" alt="Eran Cohen" />
-              <div class="testimonial-quote">YASO AI revolutionizes app development by enabling users t...</div>
-              <div class="testimonial-author">Eran Cohen</div>
-              <div class="testimonial-socials">
-                <!-- GitHub -->
-                <a href="#" target="_blank" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.61-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 6.8c.85.004 1.7.12 2.5.35 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg></a>
-              </div>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="testimonial-card bg1">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/16.jpg" alt="Ariel MI" />
-              <div class="testimonial-quote">Amazing understanding of the user needs and thorough handli...</div>
-              <div class="testimonial-author">Ariel MI</div>
-              <div class="testimonial-socials">
-                <!-- LinkedIn -->
-                <a href="#" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg2">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/17.jpg" alt="Thatweb3guy" />
-              <div class="testimonial-quote">@MS_YASO_AI @base_44 I gave it a try and I must to be truthful, it...</div>
-              <div class="testimonial-author">Thatweb3guy <span class="testimonial-handle">@myfootyfantasy</span></div>
-              <div class="testimonial-socials">
-                <!-- Facebook -->
-                <a href="#" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg></a>
-              </div>
-            </div>
-            <div class="testimonial-card bg3">
-              <img class="testimonial-avatar" src="https://randomuser.me/api/portraits/men/18.jpg" alt="Roy Kotzer" />
-              <div class="testimonial-quote">Start building in minutes. See results immediately. Great!</div>
-              <div class="testimonial-author">Roy Kotzer</div>
-              <div class="testimonial-socials">
-                <!-- X (Twitter) -->
-                <a href="#" target="_blank" aria-label="X"><svg viewBox="0 0 24 24"><path d="M17.53 6.47L12 12l5.53 5.53-1.06 1.06L12 13.06l-5.47 5.53-1.06-1.06L10.94 12 5.47 6.47l1.06-1.06L12 10.94l5.47-5.53z"/></svg></a>
-              </div>
-            </div>
-          </div>
+        <div
+          class="limitless-img"
+        >
+          <img
+            src="/static/1.png"
+            alt="Create at the speed of thought"
+            class="limitless-img-inner"
+          />
         </div>
       </div>
-    </section>
-
-    <!-- Limitless Section -->
-    <section class="bg-white fade-in">
-      <div class="container-center">
-        <h2 class="section-title-lg">
-          Consider yourself limitless.
-        </h2>
-        <div class="section-desc-lg">
-          If you can describe it, you can build it.
+      <div
+        class="fade-in limitless-block bg2 row-reverse"
+      >
+        <div
+          class="limitless-text right"
+        >
+          <h3>צור במהירות המחשבה</h3>
+          <div class="limitless-desc">
+            ספר ל-NEXTAGENT AI על הרעיון שלך וצפה בו מתממש לאפליקציה עובדת—
+            עם כל הרכיבים, הדפים, הזרימות והפיצ’רים הנדרשים.
+          </div>
+          <a
+            href="/editor"
+            class="cta-btn cta-btn-fit"
+            >התחל לבנות</a>
         </div>
-        <div class="limitless-blocks">
-          <div
-            class="fade-in limitless-block bg1"
-          >
-            <div
-              class="limitless-text"
-            >
-              <h3>Create at the speed of thought</h3>
-              <div class="limitless-desc">
-                Tell YASO AI your idea, and watch it transform into a working
-                app—complete with all the necessary components, pages, flows and
-                features.
-              </div>
-              <a
-                href="/editor"
-                class="cta-btn cta-btn-fit"
-                >Start building</a>
-            </div>
-            <div
-              class="limitless-img"
-            >
-              <img
-                src="/static/1.png"
-                alt="Create at the speed of thought"
-                class="limitless-img-inner"
-              />
-            </div>
-          </div>
-          <div
-            class="fade-in limitless-block bg2 row-reverse"
-          >
-            <div
-              class="limitless-text right"
-            >
-              <h3>The backend’s built-in automatically</h3>
-              <div class="limitless-desc">
-                Everything your idea needs to function, like letting users sign
-                in, saving their data, or creating role-based permissions is
-                taken care of behind the scenes.
-              </div>
-              <a
-                href="/editor"
-                class="cta-btn cta-btn-fit"
-                >Start building</a>
-            </div>
-            <div
-              class="limitless-img left"
-            >
-              <img
-                src="/static/2.png"
-                alt="The backend’s built-in automatically"
-                class="limitless-img-inner"
-              />
-            </div>
-          </div>
-          <div
-            class="fade-in limitless-block bg3"
-          >
-            <div
-              class="limitless-text"
-            >
-              <h3>Ready to use, instantly.</h3>
-              <div class="limitless-desc">
-                Our platform comes with built-in hosting, so when your app is
-                ready the only thing left to do is publish, put it to use, and
-                share it with your friends or community.
-              </div>
-              <a
-                href="/editor"
-                class="cta-btn cta-btn-fit"
-                >Start building</a>
-            </div>
-            <div
-              class="limitless-img"
-            >
-              <img
-                src="/static/3.png"
-                alt="Ready to use, instantly."
-                class="limitless-img-inner"
-              />
-            </div>
-          </div>
+        <div
+          class="limitless-img left"
+        >
+          <img
+            src="/static/1.png"
+            alt="The backend’s built-in automatically"
+            class="limitless-img-inner"
+          />
         </div>
       </div>
-    </section>
-
-    
-    <!-- Pricing Section -->
-    <section class="fade-in bg-white">
-      <div style="width: 100%; padding: 0 0 80px 0;">
-        <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 48px; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; flex-wrap: nowrap;">
-          <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start; min-width: 260px;">
-            <h2 class="section-title-lg" style="text-align: left;">Pricing plans for <span class="highlight-accent">every need</span></h2>
-            <div class="section-desc-lg" style="text-align: left;">Scale as you go with plans designed to match your growth.</div>
+      <div
+        class="fade-in limitless-block bg3"
+      >
+        <div
+          class="limitless-text"
+        >
+          <h3>מוכן לשימוש, מיד.</h3>
+          <div class="limitless-desc">
+            הפלטפורמה שלנו כוללת אחסון מובנה, כך שכשהאפליקציה שלך מוכנה,
+            כל מה שנשאר הוא לפרסם, להשתמש ולשתף עם חברים או קהילה.
           </div>
-          <div style="display: flex; flex-direction: row; gap: 24px; align-items: flex-start; justify-content: flex-end; flex-wrap: nowrap; margin-left: 120px;">
-            <div class="pricing-card-animate" style="background: #fff; border-radius: 36px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 40px 24px; color: #23263a; max-width: 420px; min-width: 320px; text-align: center; border: 10px solid #1a237e; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s, transform 0.3s;">
-              <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Start for free.</h3>
-              <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$0</div>
-              <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
-              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 0; text-align: left; list-style: none;">
-                <li class="pricing-list-item">✔ All core features</li>
-                <li class="pricing-list-item">✔ Built-in integrations</li>
-                <li class="pricing-list-item">✔ Authentication system</li>
-                <li class="pricing-list-item">✔ Database functionality</li>
-              </ul>
-              <a href="/editor" class="cta-btn cta-btn-full" style="margin-top: 10px;">Start building</a>
-            </div>
-            <div class="pricing-card-animate" style="background: #fff; border-radius: 36px; box-shadow: 0 2px 24px rgba(68,233,255,0.12); padding: 40px 24px; color: #23263a; max-width: 420px; min-width: 320px; text-align: center; border: 10px solid #1a237e; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.3s, transform 0.3s;">
-              <h3 class="pricing-title" style="color: #23263a; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px;">Pro Plan</h3>
-              <div style="font-size: 2.2rem; font-weight: 900; color: #44e9ff; margin-bottom: 0;">$20</div>
-              <div style="color: #444; font-size: 1.08rem; margin-bottom: 18px;">/ mo</div>
-              <ul class="pricing-list" style="color: #444; font-size: 1.01rem; margin-bottom: 18px; padding-left: 0; text-align: left; list-style: none;">
-                <li class="pricing-list-item">✔ Everything in Free</li>
-                <li class="pricing-list-item">✔ More credits</li>
-                <li class="pricing-list-item">✔ Priority support</li>
-                <li class="pricing-list-item">✔ Advanced integrations</li>
-              </ul>
-              <a href="#" class="cta-btn cta-btn-full" style="background: linear-gradient(90deg, #44e9ff 0%, #6e5cff 100%); margin-top: 10px;">See all plans</a>
-            </div>
-          </div>
+          <a
+            href="/editor"
+            class="cta-btn cta-btn-fit"
+            >התחל לבנות</a>
+        </div>
+        <div
+          class="limitless-img"
+        >
+          <img
+            src="/static/3.png"
+            alt="Ready to use, instantly."
+            class="limitless-img-inner"
+          />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- FAQ Section -->
-
-
-    <!-- why yaso Section -->  
-
-    <!-- Pricing Section -->
-
- <!-- ... (rest of your HTML above) ... -->
-
-    <!-- How it works Section -->
-    <section class="howitworks-modern-section">
-      <div class="howitworks-modern-container">
-        <h2 class="howitworks-modern-title">How it works</h2>
-        <h2 class="howitworks-modern-text">Transform your app ideas into beautiful UI designs in just a few simple steps.</h2>
-        <div class="howitworks-modern-steps">
-          <!-- Step 1 -->
-          <div class="howitworks-modern-step">
-            <div class="howitworks-modern-icon">
-              <!-- Pencil/idea SVG -->
-              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#E3F6FF"/><path d="M13 23l2.5-7.5L23 13l-7.5 2.5L13 23z" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23" cy="13" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/></svg>
-            </div>
-            <div class="howitworks-modern-step-title">Describe your app</div>
-            <div class="howitworks-modern-step-desc">Tell us what you want to build in plain English.</div>
-          </div>
-          <!-- Arrow -->
-          <div class="howitworks-modern-arrow">
-            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <!-- Step 2 -->
-          <div class="howitworks-modern-step">
-            <div class="howitworks-modern-icon">
-              <!-- Magic wand SVG -->
-              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#F3EFFF"/><path d="M12 24l12-12" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="1.5" fill="#6E5CFF"/><circle cx="12" cy="24" r="1.5" fill="#44E9FF"/></svg>
-            </div>
-            <div class="howitworks-modern-step-title">AI generates your UI</div>
-            <div class="howitworks-modern-step-desc">Our AI instantly creates a beautiful, editable app design.</div>
-          </div>
-          <!-- Arrow -->
-          <div class="howitworks-modern-arrow">
-            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <!-- Step 3 -->
-          <div class="howitworks-modern-step">
-            <div class="howitworks-modern-icon">
-              <!-- Edit/brush SVG -->
-              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#E3F6FF"/><path d="M22 14l-8 8m0 0h4m-4 0v-4" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/></svg>
-            </div>
-            <div class="howitworks-modern-step-title">Refine & customize</div>
-            <div class="howitworks-modern-step-desc">Tweak layouts, colors, and features to fit your vision.</div>
-          </div>
-          <!-- Arrow -->
-          <div class="howitworks-modern-arrow">
-            <svg width="32" height="16" viewBox="0 0 32 16" fill="none"><path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <!-- Step 4 -->
-          <div class="howitworks-modern-step">
-            <div class="howitworks-modern-icon">
-              <!-- Export/cloud SVG -->
-              <svg width="36" height="36" fill="none" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#F3EFFF"/><path d="M18 12v8m0 0l-3-3m3 3l3-3" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="26" r="1.5" fill="#6E5CFF"/></svg>
-            </div>
-            <div class="howitworks-modern-step-title">Export & launch</div>
-            <div class="howitworks-modern-step-desc">Export your app and share it with the world instantly.</div>
-          </div>
+<!-- How it Works Section RTL - AI Agent for Business -->
+<section class="howitworks-modern-section" dir="rtl">
+  <div class="howitworks-modern-container">
+    <h2 class="howitworks-modern-title">איך סוכן AI משתלב בעסק שלך</h2>
+    <h2 class="howitworks-modern-text">למד כיצד הסוכן שלנו מתחבר למערכת העסק שלך ומשפר את התהליכים בצורה אוטומטית וחכמה.</h2>
+    <div class="howitworks-modern-steps">
+      <!-- Step 1 -->
+      <div class="howitworks-modern-step">
+        <div class="howitworks-modern-icon">
+          <!-- Pencil/idea SVG -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="18" fill="#E3F6FF"/>
+            <path d="M13 23l2.5-7.5L23 13l-7.5 2.5L13 23z" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="23" cy="13" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/>
+          </svg>
         </div>
+        <div class="howitworks-modern-step-title">הגדרת העסק</div>
+        <div class="howitworks-modern-step-desc">הזן את פרטי העסק שלך, סוג השירותים והלקוחות, כדי שהסוכן יוכל להבין את הצרכים.</div>
       </div>
-    </section>
+
+      <!-- Arrow -->
+      <div class="howitworks-modern-arrow">
+        <svg width="32" height="16" viewBox="0 0 32 16" fill="none" style="transform: scaleX(-1);">
+          <path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="howitworks-modern-step">
+        <div class="howitworks-modern-icon">
+          <!-- Magic wand SVG -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="18" fill="#F3EFFF"/>
+            <path d="M12 24l12-12" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="24" cy="12" r="1.5" fill="#6E5CFF"/>
+            <circle cx="12" cy="24" r="1.5" fill="#44E9FF"/>
+          </svg>
+        </div>
+        <div class="howitworks-modern-step-title">חיבור אוטומטי</div>
+        <div class="howitworks-modern-step-desc">הסוכן מתחבר למערכות הקיימות שלך, כולל CRM, אתר ומערכות שירות לקוחות.</div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="howitworks-modern-arrow">
+        <svg width="32" height="16" viewBox="0 0 32 16" fill="none" style="transform: scaleX(-1);">
+          <path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="howitworks-modern-step">
+        <div class="howitworks-modern-icon">
+          <!-- Edit/brush SVG -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="18" fill="#E3F6FF"/>
+            <path d="M22 14l-8 8m0 0h4m-4 0v-4" stroke="#1A237E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="1.5" fill="#44E9FF" stroke="#1A237E" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="howitworks-modern-step-title">ניתוח ושיפור</div>
+        <div class="howitworks-modern-step-desc">הסוכן מנתח נתונים בזמן אמת, מציע אופטימיזציות ומשפר תהליכים עסקיים באופן אוטומטי.</div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="howitworks-modern-arrow">
+        <svg width="32" height="16" viewBox="0 0 32 16" fill="none" style="transform: scaleX(-1);">
+          <path d="M0 8h28m0 0l-4-4m4 4l-4 4" stroke="#B3B8D0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="howitworks-modern-step">
+        <div class="howitworks-modern-icon">
+          <!-- Export/cloud SVG -->
+          <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="18" fill="#F3EFFF"/>
+            <path d="M18 12v8m0 0l-3-3m3 3l3-3" stroke="#6E5CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="26" r="1.5" fill="#6E5CFF"/>
+          </svg>
+        </div>
+        <div class="howitworks-modern-step-title">שימוש ותוצאות</div>
+        <div class="howitworks-modern-step-desc">הסוכן מתחיל לבצע משימות, לנהל לקוחות ולספק דוחות בזמן אמת, והעסק שלך משתפר מיד.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ... (rest of your HTML below) ... -->
+        </div>
+      </div>
+    </section>
+
+<!-- Analytics Section -->
+<section class="analytics" id="stat">
+  <div class="container">
+    <h2><span>מכוונים למטרה</span></h2>
+    <div class="headline">
+      <span class="highlight">יותר יעיל.</span> <span class="highlight">יותר חכם.</span> יותר מכירות.
+    </div>
+    <p class="description">
+      נעים מאוד! <strong>NEXTAGENT AI</strong> מציעה סוכני AI חכמים לשירות לקוחות ומכירה, שמותאמים אישית לכל עסק. הסוכנים שלנו מנתחים את נתוני הלקוחות בזמן אמת, מספקים מענה מיידי ואוטומטי, ומייעלים את תהליכי המכירה בצורה חכמה ומדויקת.  
+      <br><br>
+      עם הפתרונות של <strong>NEXTAGENT AI</strong>, העסק שלך יכול להגדיל הכנסות, לשפר את חוויית הלקוחות ולחסוך משאבים משמעותיים. הסוכנים שלנו עובדים 24/7, מזהים הזדמנויות מכירה, מנהלים לידים בצורה אופטימלית ומספקים תמיכה מקצועית בכל שלב במסע הלקוח.  
+      <br><br>
+      בין אם מדובר בסטארטאפ קטן, חנות מקומית או חברה בינלאומית – הפוטנציאל של מערכת הסוכנים של <strong>NEXTAGENT AI</strong> הוא עצום: אתה מקבל כוח עבודה אינטיליגנטי שמגיב בזמן אמת, לומד ומתאים את עצמו לצרכים של העסק שלך, ומספק יתרון תחרותי אמיתי בשוק.
+    </p>
+    <div class="dots">•••••</div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number" data-target="500000">0</div>
+        <div class="stat-label">שיחות אוטומטיות עם לקוחות</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="15000000">0</div>
+        <div class="stat-label">מכירות שבוצעו ע״י סוכני AI שלנו</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="25000">0</div>
+        <div class="stat-label">עסקים המשתמשים בסוכנים שלנו</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" data-target="6">0</div>
+        <div class="stat-label">שנים של ניסיון בתחום AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--logos-section-->
+<section class="logos-section-wrapper">
+  <div class="logos-container">
+    <h2 class="logos-section-title">עובדים עם הטובים ביותר</h2>
+    <div class="logos">
+      <img src="/static/googl-ads-v-1.webp" alt="Google Ads" />
+      <img src="/static/tik-tok-partner.webp" alt="TikTok" />
+      <img src="/static/instegram.webp" alt="Instagram" />
+      <img src="/static/FACEBOOK.webp" alt="Facebook" />
+      <img src="/static/Meta.webp" alt="Meta" />
+    </div>
+  </div>
+</section>
+<!-- Pricing Section -->
+<section class="pricing-section fade-in bg-white">
+  <div class="pricing-container">
+    <!-- כותרת ראשית -->
+    <div class="pricing-header">
+      <h2 class="section-title-lg">תכניות תמחור <span class="highlight-accent">לכל צורך</span></h2>
+      <div class="section-desc-lg">גדל עם העסק שלך עם תכניות שתואמות את הצמיחה שלך.</div>
+    </div>
+
+    <!-- כרטיסים -->
+    <div class="pricing-cards">
+      <div class="pricing-card-animate">
+        <h3 class="pricing-title">התחל בחינם.</h3>
+        <div class="pricing-price">₪0</div>
+        <div class="pricing-sub">/ לחודש</div>
+        <ul class="pricing-list">
+          <li class="pricing-list-item">✔ כל הפיצ'רים המרכזיים</li>
+          <li class="pricing-list-item">✔ אינטגרציות מובנות</li>
+          <li class="pricing-list-item">✔ מערכת אימות משתמשים</li>
+          <li class="pricing-list-item">✔ פונקציונליות מסד נתונים</li>
+        </ul>
+        <a href="/editor" class="cta-btn cta-btn-full">התחל לבנות</a>
+      </div>
+
+      <div class="pricing-card-animate">
+        <h3 class="pricing-title">תכנית פרו</h3>
+        <div class="pricing-price">299₪</div>
+        <div class="pricing-sub">/ לחודש</div>
+        <ul class="pricing-list">
+          <li class="pricing-list-item">✔ כל מה שבתכנית החינמית</li>
+          <li class="pricing-list-item">✔ יותר קרדיטים</li>
+          <li class="pricing-list-item">✔ תמיכה בעדיפות גבוהה</li>
+          <li class="pricing-list-item">✔ אינטגרציות מתקדמות</li>
+        </ul>
+        <a href="#" class="cta-btn cta-btn-full" style="background: linear-gradient(90deg, #44e9ff 0%, #6e5cff 100%);">ראה את כל התכניות</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Categories -->
+<section class="service-categories" id="service">
+  <section class="development">
+    <div class="marquee marquee-left">
+      <div class="loop-container-wrapper">
+        <div class="loop-container">
+          <div class="item outline"><p>AI Chat Support</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Sales Automation</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Lead Qualification</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Customer Insights</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Order Tracking</p></div><div class="sep">-</div>
+          <div class="item filled"><p>24/7 Support</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Follow-up Automation</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Upsell Recommendations</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Customer Feedback</p></div><div class="sep">-</div>
+          <div class="item filled"><p>CRM Integration</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Support Ticket Routing</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Automated Reporting</p></div><div class="sep">-</div>
+          <div class="item outline"><p>AI Chat Support</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Sales Automation</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Lead Qualification</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Customer Insights</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Order Tracking</p></div><div class="sep">-</div>
+          <div class="item filled"><p>24/7 Support</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Follow-up Automation</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Upsell Recommendations</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Customer Feedback</p></div><div class="sep">-</div>
+          <div class="item filled"><p>CRM Integration</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Support Ticket Routing</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Automated Reporting</p></div><div class="sep">-</div>
+        </div>
+      </div>
+    </div>
+    <div class="marquee marquee-right">
+      <div class="loop-container-wrapper">
+        <div class="loop-container">
+          <div class="item outline"><p>AI Call Handling</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Customer Segmentation</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Automated Emails</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Sales Forecasting</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Knowledge Base</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Chatbot Integration</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Customer Retention</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Order Follow-up</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Live Chat Support</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Analytics Dashboard</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Ticket Prioritization</p></div><div class="sep">-</div>
+          <div class="item outline"><p>AI Call Handling</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Customer Segmentation</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Automated Emails</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Sales Forecasting</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Knowledge Base</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Chatbot Integration</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Customer Retention</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Order Follow-up</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Live Chat Support</p></div><div class="sep">-</div>
+          <div class="item filled"><p>Analytics Dashboard</p></div><div class="sep">-</div>
+          <div class="item outline"><p>Ticket Prioritization</p></div><div class="sep">-</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+</section>
+
+ <!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-header">
+        <h2 class="contact-title">
+          NEXTAGENT AI – סוכני AI חכמים לשירות לקוחות ומכירה<br />
+          קחו את העסק שלכם קדימה
+        </h2>
+      </div>
+
+      <div class="contact-form-container">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="firstName" class="form-label">נעים מאוד, מה שמך?</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              class="form-input"
+              placeholder="השם הפרטי שלך"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="form-label">מה שם המשפחה?</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              class="form-input"
+              placeholder="שם המשפחה"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">
+              לאיזה מייל נשלח פתרון AI מותאם אישית עבורך?
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="כתובת המייל שלך"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">
+              מספר טלפון ליצירת קשר 
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              placeholder="מספר הטלפון שלך"
+            />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="service" class="form-label">
+              מה המטרה העסקית שלך?
+            </label>
+            <select id="service" name="service" class="form-select">
+              <option value="">בחר שירות</option>
+              <option value="customer-service">סוכן שירות לקוחות חכם</option>
+              <option value="sales-automation">אוטומציה למכירות</option>
+              <option value="lead-management">ניהול לידים ולקוחות</option>
+              <option value="analytics-dashboard">דשבורד ניתוח נתונים</option>
+              <option value="custom-ai-solutions">פתרונות AI מותאמים אישית</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="message" class="form-label">
+              ספר לנו על העסק או על האתגרים שלך
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="כאן תוכל לתאר את הצרכים שלך ואיך אנחנו יכולים לסייע"
+            ></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="budget" class="form-label">
+              תקציב חודשי עבור פתרונות AI
+            </label>
+            <select id="budget" name="budget" class="form-select">
+              <option value="">בחר תקציב</option>
+              <option value="500-1000">₪500 - ₪1000</option>
+              <option value="5000-10000">₪5,000 - ₪10,000</option>
+              <option value="10000-20000">₪10,000 - ₪20,000</option>
+              <option value="20000-50000">₪20,000 - ₪50,000</option>
+              <option value="50000+">₪50,000+</option>
+            </select>
+          </div>
+
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              class="checkbox-input"
+            />
+            <label for="newsletter" class="checkbox-label">
+              אני רוצה לקבל טיפים ומידע על איך סוכני AI יכולים להגדיל את העסק שלי
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            שלחו לי פתרון AI מותאם אישית →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Footer Section -->
-    <footer class="footer">
-      <div class="footer-main">
-                <div class="footer-bottom">
-          <div class="footer-bottom-left">
-            <img src="/static/logo.png" alt="YASO AI Logo" class="footer-logo" style="width:32px;height:32px;display:block;margin-bottom:6px;" />
-            <span class="footer-copyright">© 2025 YASO AI. All rights reserved.</span>
-          </div>
-          <div class="footer-bottom-right">
-            <div class="footer-col">
-              <div class="footer-heading">Company</div>
-              <ul class="footer-links">
-                <li><a href="/pricing">Pricing</a></li>
-                <li><a href="/faq">FAQ</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <div class="footer-heading">Legal</div>
-              <ul class="footer-links">
-                <li><a href="/terms">Terms of Service</a></li>
-                <li><a href="/privacy">Privacy Policy</a></li>
-                <li><a href="/delete-account" class="footer-delete">Delete Account</a></li>
-              </ul>
-            </div>
-          </div>
+<footer class="footer">
+  <div class="footer-main">
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <img src="/static/logo.png" alt="NEXTAGENT AI Logo" class="footer-logo" style="width:32px;height:32px;display:block;margin-bottom:6px;" />
+        <span class="footer-copyright">
+          © 2025 NEXTAGENT AI. כל הזכויות שמורות.
+        </span>
+      </div>
+      <div class="footer-bottom-right">
+        <div class="footer-col">
+          <div class="footer-heading">שירותים</div>
+          <ul class="footer-links">
+            <li><a href="/pricing">חבילות ושירותים</a></li>
+            <li><a href="/faq">שאלות נפוצות</a></li>
+            <li><a href="/contact">צור קשר</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">חוקים ורגולציה</div>
+          <ul class="footer-links">
+            <li><a href="/terms">תנאי שימוש</a></li>
+            <li><a href="/privacy">מדיניות פרטיות</a></li>
+            <li><a href="/delete-account" class="footer-delete">מחק חשבון</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-    <div class="footer-bg-wrapper">
-      <img src="/static/footer-bg.png" alt="Footer Background" style="width:100vw;max-width:100%;display:block;margin:0 auto 0 auto;">
     </div>
-    <script src="/static/script.js"></script>
+  </div>
+</footer>
+<div class="footer-image-bar">
+  <img src="/static/footer-bg-1.png" alt="Footer Background" style="width:100%;height:auto;display:block;">
+</div>
+
+
+
+        <script src="/static/script.js"></script>
     <style>
       .pricing-card-animate.js-hover {
         box-shadow: 0 8px 40px 0 rgba(26,35,126,0.18), 0 2px 24px rgba(68,233,255,0.12);
@@ -532,18 +754,20 @@
       // Typing effect for builder input
       (function() {
         const options = [
-          "Design an accessible health tracking UI",
-          "Design a user-friendly travel app layout",
-          "Create a colorful social media interface",
-          "Create a mobile-first e-commerce design",
-          "Build a smart fitness progress dashboard",
-          "Design a modern recipe sharing platform",
-          "Create a collaborative project management tool",
-          "Launch a real-time language learning app",
-          "Design a minimalist personal finance tracker",
-          "Build an interactive event planning calendar",
-          "Create a secure team messaging workspace",
-          "Design a beautiful portfolio website for creatives"
+        "צור סוכן AI לשירות לקוחות בזמן אמת",
+"צור סוכן AI למענה אוטומטי למכירות",
+"צור דשבורד חכם לניהול לידים",
+"צור מערכת AI לניהול פניות לקוחות",
+"צור כלי ניתוח נתונים למכירות ושימור לקוחות",
+"צור סוכן AI לניהול צ'אט באתר",
+"צור כלי חכם לניהול קמפיינים ושיווק",
+"צור מערכת AI למעקב אחרי ביצועי מכירות",
+"צור סוכן AI להתראות ומעקב הזדמנויות",
+"צור דשבורד אינטראקטיבי לניהול לקוחות",
+"צור מערכת מאובטחת להודעות בין צוותי תמיכה",
+"צור סוכן AI לניהול ושיפור חוויית לקוח"
+
+
         ];
         const input = document.getElementById('modalPrompt');
         let optionIndex = 0;
@@ -576,5 +800,19 @@
         type();
       })();
     </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".mobile-menu-toggle");
+  const menu = document.querySelector(".mobile-navbar-menu");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    menu.classList.toggle("active");
+  });
+});
+</script>
+
+
   </body>
 </html>
