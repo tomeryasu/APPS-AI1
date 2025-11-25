@@ -2,7 +2,7 @@
 body {
   font-family: 'Heebo', sans-serif;
   margin: 0;
-  background: url('/static/hero-bg.png') center center no-repeat;
+background: url('./hero-bg.png') center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: #1a237e;
@@ -1578,10 +1578,6 @@ body {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
-
-  
-
-
 /* ===== Signup Page Custom Styles ===== */
 .signup-bg {
   min-height: 100vh;
@@ -2268,3 +2264,218 @@ direction: rtl;
     text-align: center !important;
   }
 }
+
+/* ===== Footer ===== */
+.footer {
+  background: #171817 url('/static/footer-bg1.png') center bottom no-repeat;
+  background-size: cover;
+  padding: 48px 0 24px 0;
+  text-align: left;
+}
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-cols {
+  display: flex;
+  gap: 64px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.footer-col {
+  min-width: 180px;
+}
+.footer-heading {
+  font-size: 1.13rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+.footer-links a {
+  color: #c7c7c7;
+  text-decoration: none;
+  font-size: 1.01rem;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.footer-links a:hover {
+  color: #ffffff;
+}
+.footer-delete {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+.footer-bottom {
+  padding-top: 18px;
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  text-align: left;
+}
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.footer-bottom-right {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+}
+.footer-logo {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 12px;
+  display: inline-block;
+}
+.footer-copyright {
+  color: #ffffff;
+  font-size: 1.01rem;
+  font-weight: 600;
+}
+/* ===== Footer Mobile Centered & Clean ===== */
+.footer {
+  background: #171817 url('/static/footer-bg1.png') center bottom no-repeat;
+  background-size: cover;
+  padding: 48px 0 24px 0;
+  text-align: center; /* מרכז את כל הטקסט */
+}
+
+/* מחיקת הלוגו וקופי רייט */
+.footer-logo,
+.footer-copyright {
+  display: none !important;
+}
+
+/* קונטיינר מרכזי */
+.footer-main {
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* עמודות הפוטר */
+.footer-cols {
+  display: flex !important;
+  flex-direction: column !important; /* עמודה אחת למובייל */
+  align-items: center !important; /* מרכז כל העמודות */
+  gap: 16px !important; /* רווח קטן בין הסקשיינים */
+  margin-bottom: 0 !important; /* מסיר רווח שיוצר פס לבן */
+}
+
+/* כל עמודה */
+.footer-col {
+  width: 100% !important;
+  min-width: 0 !important;
+  text-align: center !important; /* מרכז את התוכן */
+}
+
+/* Footer bottom */
+.footer-bottom {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  margin-top: 0 !important; /* מסיר רווח שיוצר פס לבן */
+}
+
+/* Footer bottom left / right */
+.footer-bottom-left,
+.footer-bottom-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* ===== Footer & Contact Mobile Fix ===== */
+@media (max-width: 768px) {
+  /* מרכזת את הסקשן של יצירת קשר והפוטר */
+  .contact,
+  .contact-content,
+  .footer,
+  .footer-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* מרכזת את הפוטר והקישורים */
+  .footer {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* מסירה את הלוגו והקופי רייט */
+  .footer-logo,
+  .footer-copyright {
+    display: none !important;
+  }
+
+  /* עמודות הפוטר למרכז */
+  .footer-cols {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important; /* רווח קטן בין הקטגוריות */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .footer-links li {
+    margin: 6px 0 !important; /* רווח קטן בין הקישורים */
+  }
+
+  .footer-links a {
+    color: #c7c7c7 !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+  }
+
+  .footer-links a:hover {
+    color: #ffffff !important;
+  }
+}
+
+  .footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* אם יש אלמנט מתחת לפוטר כמו תמונה */
+  .footer + img,
+  .footer + .some-next-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
