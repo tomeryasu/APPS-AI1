@@ -184,70 +184,57 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+// Animated counter for stats
+function animateStats() {
+  const counters = document.querySelectorAll(".stat-number");
 
-  // Animated counter for stats - Simplified and more reliable
-  function animateStats() {
-    console.log("🚀 Starting stats animation...");
-    const counters = document.querySelectorAll(".stat-number");
-    console.log("📊 Found counters:", counters.length);
-    
-    if (counters.length === 0) {
-      console.log("❌ No counters found! Checking for stats section...");
-      const statsSection = document.getElementById('stat');
-      console.log("📈 Stats section found:", !!statsSection);
-      if (statsSection) {
-        console.log("📈 Stats section HTML:", statsSection.innerHTML.substring(0, 200) + "...");
-      }
-      return;
-    }
-    
-    counters.forEach((counter, index) => {
-      const target = parseInt(counter.getAttribute("data-target"));
-      console.log(`📊 Counter ${index}: target = ${target}, current text = "${counter.textContent}"`);
-      
-      if (target && !isNaN(target)) {
-        let current = 0;
-        const increment = target / 50; // Faster animation
-        
-        const updateCounter = () => {
-          if (current < target) {
-            current += increment;
-            counter.textContent = Math.floor(current).toLocaleString();
-            requestAnimationFrame(updateCounter);
-          } else {
-            counter.textContent = target.toLocaleString();
-            console.log(`✅ Counter ${index} completed: ${target}`);
-          }
-        };
-        
-        // Start animation after a short delay
-        setTimeout(updateCounter, 500 + (index * 200));
+  counters.forEach((counter) => {
+    const target = parseInt(counter.getAttribute("data-target"));
+    const isMoney = target === 15000000; // רק זה מקבל ₪
+
+    if (!target || isNaN(target)) return;
+
+    let current = 0;
+    const increment = target / 50;
+
+    const updateCounter = () => {
+      if (current < target) {
+        current += increment;
+        const value = Math.floor(current).toLocaleString();
+        counter.textContent = isMoney ? value + "₪" : value;
+        requestAnimationFrame(updateCounter);
       } else {
-        console.log(`❌ Counter ${index}: Invalid target value: ${target}`);
+        const finalValue = target.toLocaleString();
+        counter.textContent = isMoney ? finalValue + "₪" : finalValue;
       }
-    });
-  }
+    };
 
-  // Run stats animation when page loads
-  animateStats();
-  
-  // Also run when stats section comes into view
-  const statsSection = document.getElementById('stat');
-  if (statsSection) {
-    const statsObserver = new IntersectionObserver(function (entries) {
+    setTimeout(updateCounter, 500);
+  });
+}
+
+// Run stats animation on load
+animateStats();
+
+// Also run when stats section becomes visible
+const statsSection = document.getElementById("stat");
+if (statsSection) {
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Stats section is visible, animating...");
           animateStats();
           statsObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.3 });
-    
-    statsObserver.observe(statsSection);
-  }
+    },
+    { threshold: 0.3 }
+  );
 
-  // Intersection Observer for scroll animations
+  statsObserver.observe(statsSection);
+}
+
+ // Intersection Observer for scroll animations
   const animationObserverOptions = {
     threshold: 0.1,
     rootMargin: "0px 0px -50px 0px",
